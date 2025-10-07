@@ -86,6 +86,4 @@ class Comment(models.Model):
         return f"Comment by {self.user.username} on {self.post}"
 
 
-from django.db import models
-
 # Create your models here.
