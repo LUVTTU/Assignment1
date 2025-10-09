@@ -1,0 +1,54 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{% if object %}Update{% else %}Create{% endif %} Reservation</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary">
+                                {% if object %}Update{% else %}Create{% endif %} Reservation
+                            </button>
+                            <a href="{% if object %}{% url 'reservation-detail' object.pk %}{% else %}{% url 'home' %}{% endif %}" 
+                               class="btn btn-secondary">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Initialize datetime picker
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD HH:mm',
+            sideBySide: true,
+            icons: {
+                time: 'fa fa-time',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+        });
+    });
+</script>
+{% endblock %}

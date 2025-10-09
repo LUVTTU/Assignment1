@@ -1,0 +1,102 @@
+{% extends 'Base.html' %}
+
+{% block title %}My Profile - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">My Profile</h4>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <div class="mb-3">
+                                {% if user.profile.avatar %}
+                                    <img src="{{ user.profile.avatar.url }}" 
+                                         alt="Profile Picture" 
+                                         class="img-fluid rounded-circle"
+                                         style="width: 150px; height: 150px; object-fit: cover;">
+                                {% else %}
+                                    <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                                         style="width: 150px; height: 150px; margin: 0 auto; font-size: 3rem;">
+                                        {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <a href="{% url 'booking:profile-update' %}" class="btn btn-outline-primary">
+                                <i class="fas fa-edit"></i> Edit Profile
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <h3>{{ user.get_full_name|default:user.username }}</h3>
+                            <p class="text-muted">@{{ user.username }}</p>
+                            
+                            <hr>
+                            
+                            <h5>Contact Information</h5>
+                            <p>
+                                <i class="fas fa-envelope me-2"></i> 
+                                {{ user.email }}
+                            </p>
+                            
+                            {% if user.profile.phone_number %}
+                            <p>
+                                <i class="fas fa-phone me-2"></i> 
+                                {{ user.profile.phone_number }}
+                            </p>
+                            {% endif %}
+                            
+                            {% if user.profile.department %}
+                            <p>
+                                <i class="fas fa-building me-2"></i>
+                                {{ user.profile.get_department_display }}
+                            </p>
+                            {% endif %}
+                            
+                            <hr>
+                            
+                            <div class="d-flex justify-content-between">
+                                <div class="text-center">
+                                    <h5>{{ user.reservations.count }}</h5>
+                                    <p class="text-muted mb-0">Reservations</p>
+                                </div>
+                                <div class="text-center">
+                                    <h5>{{ user.reservations.filter(status='APPROVED').count }}</h5>
+                                    <p class="text-muted mb-0">Approved</p>
+                                </div>
+                                <div class="text-center">
+                                    <h5>{{ user.reservations.filter(status='PENDING').count }}</h5>
+                                    <p class="text-muted mb-0">Pending</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    Member since {{ user.date_joined|date:"F d, Y" }}
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <a href="{% url 'booking:my-reservations' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-calendar-alt me-2"></i> View My Reservations
+                </a>
+                <a href="{% url 'booking:reservation-create' %}" class="btn btn-primary ms-2">
+                    <i class="fas fa-plus me-2"></i> New Reservation
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Find a Room</h2>
+                </div>
+                <div class="card-body">
+                    <form method="get" id="room-search-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ form.room_type|as_crispy_field }}
+                                {{ form.capacity|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    {{ form.has_projector|as_crispy_field }}
+                                </div>
+                                <div class="form-check">
+                                    {{ form.has_whiteboard|as_crispy_field }}
+                                </div>
+                                <div class="form-check">
+                                    {{ form.has_video|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <h5>Check Availability</h5>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        {{ form.date|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        {{ form.start_time|as_crispy_field }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        {{ form.end_time|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Search Rooms
+                            </button>
+                            <a href="{% url 'room-list' %}" class="btn btn-secondary">
+                                <i class="fas fa-undo"></i> Reset
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            {% if rooms %}
+                <div class="mt-4">
+                    <h3>Available Rooms</h3>
+                    <div class="row">
+                        {% for room in rooms %}
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    {% if room.image %}
+                                        <img src="{{ room.image.url }}" class="card-img-top" alt="{{ room.name }}">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ room.name }}</h5>
+                                        <p class="card-text">
+                                            <i class="fas fa-users"></i> Capacity: {{ room.capacity }}<br>
+                                            <i class="fas fa-door-open"></i> Type: {{ room.get_room_type_display }}<br>
+                                            <i class="fas fa-map-marker-alt"></i> Floor: {{ room.get_floor_display }}
+                                        </p>
+                                        <div class="mb-3">
+                                            {% if room.has_projector %}
+                                                <span class="badge badge-success"><i class="fas fa-tv"></i> Projector</span>
+                                            {% endif %}
+                                            {% if room.has_whiteboard %}
+                                                <span class="badge badge-info"><i class="fas fa-chalkboard"></i> Whiteboard</span>
+                                            {% endif %}
+                                            {% if room.has_video_conference %}
+                                                <span class="badge badge-primary"><i class="fas fa-video"></i> Video Conference</span>
+                                            {% endif %}
+                                        </div>
+                                        <a href="{% url 'room-detail' room.pk %}" class="btn btn-primary">
+                                            View Details
+                                        </a>
+                                        <a href="{% url 'reservation-create-room' room.pk %}" class="btn btn-success">
+                                            Book Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Initialize date and time pickers
+    $(function () {
+        $('input[type="date"]').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+            startDate: 'today'
+        });
+        
+        $('input[type="time"]').timepicker({
+            showMeridian: false,
+            minuteStep: 15
+        });
+    });
+</script>
+{% endblock %}

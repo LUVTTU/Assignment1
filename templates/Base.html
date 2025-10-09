@@ -18,36 +18,48 @@
     <script src="https://cdn.ckeditor.com/4.25.1-lt/standard/ckeditor.js"></script>
     <style>
         :root {
-            --bs-primary: #6f42c1;
-            --bs-primary-rgb: 111, 66, 193;
-            --bs-primary-bg-subtle: #e9ddfb;
-            --bs-primary-border-subtle: #d4bff7;
-            --bs-primary-text-emphasis: #2c1a4d;
-            --bs-link-color: #6f42c1;
-            --bs-link-hover-color: #5a32a8;
-            --bs-link-color-rgb: 111, 66, 193;
-            --bs-link-hover-color-rgb: 90, 50, 168;
+            --bs-primary: #4a148c;
+            --bs-primary-rgb: 74, 20, 140;
+            --bs-primary-bg-subtle: #e8eaf6;
+            --bs-primary-border-subtle: #c5cae9;
+            --bs-primary-text-emphasis: #1a237e;
+            --bs-link-color: #5e35b1;
+            --bs-link-hover-color: #4527a0;
+            --bs-link-color-rgb: 94, 53, 177;
+            --bs-link-hover-color-rgb: 69, 39, 160;
+            --dark-purple: #311b92;
+            --medium-purple: #5e35b1;
+            --light-purple: #9575cd;
+            --accent-purple: #7e57c2;
         }
         
         .btn-primary {
-            --bs-btn-bg: var(--bs-primary);
-            --bs-btn-border-color: var(--bs-primary);
-            --bs-btn-hover-bg: #5a32a8;
-            --bs-btn-hover-border-color: #4f2c96;
-            --bs-btn-active-bg: #4f2c96;
-            --bs-btn-active-border-color: #442683;
-            --bs-btn-disabled-bg: var(--bs-primary);
-            --bs-btn-disabled-border-color: var(--bs-primary);
+            --bs-btn-bg: var(--dark-purple);
+            --bs-btn-border-color: var(--dark-purple);
+            --bs-btn-hover-bg: #4527a0;
+            --bs-btn-hover-border-color: #3f1f8f;
+            --bs-btn-active-bg: #3f1f8f;
+            --bs-btn-active-border-color: #381c7d;
+            --bs-btn-disabled-bg: var(--dark-purple);
+            --bs-btn-disabled-border-color: var(--dark-purple);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
         
         .btn-outline-primary {
-            --bs-btn-color: var(--bs-primary);
-            --bs-btn-border-color: var(--bs-primary);
-            --bs-btn-hover-bg: var(--bs-primary);
-            --bs-btn-hover-border-color: var(--bs-primary);
-            --bs-btn-active-bg: var(--bs-primary);
-            --bs-btn-active-border-color: var(--bs-primary);
-            --bs-btn-disabled-color: var(--bs-primary);
+            --bs-btn-color: var(--dark-purple);
+            --bs-btn-border-color: var(--dark-purple);
+            --bs-btn-hover-bg: var(--dark-purple);
+            --bs-btn-hover-border-color: var(--dark-purple);
+            --bs-btn-active-bg: var(--dark-purple);
+            --bs-btn-active-border-color: var(--dark-purple);
+            --bs-btn-disabled-color: var(--dark-purple);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
             --bs-btn-disabled-border-color: var(--bs-primary);
         }
         
@@ -150,15 +162,15 @@
     
     {% block extra_head %}{% endblock %}
 </head>
-<body class="d-flex flex-column h-100" style="background-color: #d1d7dc;">
+<body class="d-flex flex-column h-100" style="background-color: #f5f3ff;">
     <div class="content-wrapper">
         <header class="sticky-top">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background: linear-gradient(135deg, var(--dark-purple), var(--bs-primary));">
                 <div class="container">
                     <!-- Brand/Logo -->
-                    <a class="navbar-brand fw-bold d-flex align-items-center text-white" href="{% url 'index' %}">
-                        <i class="fas fa-blog me-2"></i>
-                        <span>Simple Blog</span>
+                    <a class="navbar-brand fw-bold d-flex align-items-center text-white" href="{% url 'booking:home' %}">
+                        <i class="fas fa-archway me-2"></i>
+                        <span>Te Whare Rūnanga Ltd</span>
                     </a>
                     
                     <!-- Mobile Toggle Button -->
@@ -171,8 +183,8 @@
                     <div class="collapse navbar-collapse" id="mainNavbar">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white {% if request.resolver_match.url_name == 'index' %}active fw-bold{% endif %}" 
-                                   href="{% url 'index' %}">
+                                <a class="nav-link text-white {% if request.resolver_match.url_name == 'home' %}active fw-bold{% endif %}" 
+                       href="{% url 'booking:home' %}">
                                     <i class="fas fa-home me-1 d-lg-none"></i> Home
                                 </a>
                             </li>
@@ -183,13 +195,13 @@
                                     <i class="fas fa-folder me-1 d-lg-none"></i> Categories ⌄
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{% url 'category_list' %}">
+                                    <li><a class="dropdown-item" href="#">
                                         <i class="fas fa-list me-2"></i>All Categories
                                     </a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     {% for category in categories|slice:":5" %}
                                         <li>
-                                            <a class="dropdown-item" href="{% url 'category_detail' category.pk %}">
+                                            <a class="dropdown-item" href="#">
                                                 <i class="far fa-folder me-2"></i>{{ category.name }}
                                             </a>
                                         </li>
@@ -197,7 +209,7 @@
                                     {% if categories|length > 5 %}
                                         <li><hr class="dropdown-divider"></li>
                                         <li>
-                                            <a class="dropdown-item text-info" href="{% url 'category_list' %}">
+                                            <a class="dropdown-item text-info" href="#">
                                                 <i class="fas fa-ellipsis-h me-2"></i>View All Categories
                                             </a>
                                         </li>
@@ -207,7 +219,7 @@
                             
                             {% if user.is_authenticated %}
                             <li class="nav-item d-lg-none">
-                                <a class="nav-link text-white" href="{% url 'post_create' %}">
+                                <a class="nav-link text-white" href="#">
                                     <i class="fas fa-plus-circle me-1"></i> New Post
                                 </a>
                             </li>
@@ -215,7 +227,7 @@
                         </ul>
                         
                         <!-- Search Form -->
-                        <form class="d-flex my-2 my-lg-0" role="search" action="{% url 'search' %}" method="post">
+                        <form class="d-flex my-2 my-lg-0" role="search" action="#" method="post">
                             {% csrf_token %}
                             <div class="input-group">
                                 <input class="form-control bg-light border-secondary" type="search" 
@@ -246,26 +258,26 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <a class="dropdown-item" href="{% url 'profile_detail' username=user.username %}">
+                                            <a class="dropdown-item" href="#" onclick="alert('Profile functionality coming soon!'); return false;">
                                                 <i class="fas fa-user me-2"></i>My Profile
                                             </a>
                                         </li>
                                         {% if user.profile %}
                                             <li>
-                                                <a class="dropdown-item" href="{% url 'profile_update' username=user.username %}">
+                                                <a class="dropdown-item" href="#" onclick="alert('Profile update functionality coming soon!'); return false;">
                                                     <i class="fas fa-edit me-2"></i>Edit Profile
                                                 </a>
                                             </li>
                                         {% else %}
                                             <li>
-                                                <a class="dropdown-item" href="{% url 'profile_create' %}">
+                                                <a class="dropdown-item" href="#" onclick="alert('Profile creation functionality coming soon!'); return false;">
                                                     <i class="fas fa-plus-circle me-2"></i>Create Profile
                                                 </a>
                                             </li>
                                         {% endif %}
                                         <li><hr class="dropdown-divider"></li>
                                         <li>
-                                            <form method="post" action="{% url 'logout' %}" class="d-inline">
+                                            <form method="post" action="#" class="d-inline" onsubmit="alert('Logout functionality coming soon!'); return false;">
                                                 {% csrf_token %}
                                                 <button type="submit" class="dropdown-item text-danger" style="background: none; border: none; width: 100%; text-align: left;">
                                                     <i class="fas fa-sign-out-alt me-2"></i>Logout
@@ -282,7 +294,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item d-none d-md-block">
-                                    <a class="nav-link text-white" href="{% url 'register' %}">
+                                    <a class="nav-link text-white" href="#" onclick="alert('Registration functionality coming soon!')">
                                         <i class="fas fa-user-plus me-1 d-md-none"></i>
                                         <span>Register</span>
                                     </a>
@@ -298,15 +310,15 @@
         {% endblock %}
     </div> <!-- End content-wrapper -->
     
-    <footer class="bg-dark text-white py-3">
+    <footer class="py-4" style="background: linear-gradient(135deg, var(--dark-purple), var(--bs-primary)); color: white;">
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center">
                 <!-- Links -->
                 <div class="d-flex gap-4 mb-2 mb-md-0">
-                    <a href="{% url 'index' %}" class="text-white text-decoration-none small">Home</a>
-                    <a href="{% url 'category_list' %}" class="text-white text-decoration-none small">Categories</a>
+                    <a href="{% url 'booking:home' %}" class="text-white text-decoration-none small">Home</a>
+                    <a href="#" class="text-white text-decoration-none small" style="opacity: 0.9;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'" onclick="alert('Categories functionality coming soon!')">Categories</a>
                     {% if user.is_authenticated %}
-                    <a href="{% url 'post_create' %}" class="text-white text-decoration-none small">Create Post</a>
+                    <a href="#" class="text-white text-decoration-none small" style="opacity: 0.9;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'" onclick="alert('Create Post functionality coming soon!')">Create Post</a>
                     {% endif %}
                 </div>
                 

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils import timezone
 from .models import (
-    Profile, Room, Reservation, Notification, Comment
+    Profile, Room, Reservation, Notification
 )
 
 
@@ -120,4 +120,3 @@ admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Room, RoomAdmin)
 admin.site.register(Reservation, ReservationAdmin)
 admin.site.register(Notification, NotificationAdmin)
-admin.site.register(Comment, CommentAdmin)

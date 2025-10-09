@@ -1,29 +1,56 @@
+from datetime import timedelta
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.utils import timezone
 from django.db.models import Q
 from django.http import JsonResponse
 from django.core.paginator import Paginator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserChangeForm
 from django.views.decorators.http import require_http_methods
-from datetime import datetime, timedelta
+from django.urls import reverse_lazy
 
-from .models import Room, Reservation, Notification, Profile
-from .forms import RoomSearchForm, ReservationForm, RoomForm
+from .forms import (
+    UserRegistrationForm, 
+    ReservationForm, 
+    RoomForm, 
+    ProfileForm, 
+    UserForm, 
+    AdminReservationForm,
+    RoomSearchForm
+)
+from .models import Reservation, Room, Notification, Profile, User
 
 
-def is_admin_user(user):
-    """Check if the user is an admin."""
-    return user.is_authenticated and (user.is_staff or getattr(user.profile, 'is_admin', False))
+def register(request):
+    """View for user registration."""
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Log the user in after registration
+            from django.contrib.auth import login
+            login(request, user)
+            messages.success(request, 'Registration successful! Welcome to our site.')
+            return redirect('booking:home')
+    else:
+        form = UserRegistrationForm()
+    
+    return render(request, 'booking/auth/register.html', {'form': form})
 
 
 def home(request):
-    """Home page view showing available rooms and quick actions."""
+    """View for the home page."""
+    from datetime import timedelta
+    from .models import Room, Notification, Reservation
+    
+    upcoming_reservations = []
+    unread_notifications = []
+    
     if request.user.is_authenticated:
-        # For logged-in users, show their upcoming reservations
+        # Get upcoming reservations for the logged-in user
         upcoming_reservations = Reservation.objects.filter(
             user=request.user,
             start_time__gte=timezone.now(),
@@ -35,9 +62,6 @@ def home(request):
             user=request.user,
             is_read=False
         ).order_by('-created_at')[:5]
-    else:
-        upcoming_reservations = []
-        unread_notifications = []
     
     # Get available rooms for the next 2 hours
     now = timezone.now()
@@ -141,7 +165,7 @@ def create_reservation(request, room_id=None):
                 messages.error(request, 'The selected time slot is not available. Please choose a different time.')
             else:
                 # For admin users, set status to approved directly
-                if is_admin_user(request.user):
+                if request.user.is_staff:
                     reservation.status = 'APPROVED'
                     reservation.created_by_admin = True
                 else:
@@ -173,7 +197,7 @@ class ReservationDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         # Users can only see their own reservations, or all if admin
         queryset = super().get_queryset()
-        if not self.request.user.is_staff and not is_admin_user(self.request.user):
+        if not self.request.user.is_staff:
             queryset = queryset.filter(user=self.request.user)
         return queryset
 
@@ -193,13 +217,13 @@ class ReservationUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView)
         reservation = self.get_object()
         # Only the user who created the reservation or an admin can update it
         return (self.request.user == reservation.user or 
-                is_admin_user(self.request.user))
+                self.request.user.is_staff)
     
     def form_valid(self, form):
         reservation = form.save(commit=False)
         
         # If admin is updating, set the status to approved if it was pending
-        if is_admin_user(self.request.user) and reservation.status == 'PENDING':
+        if self.request.user.is_staff and reservation.status == 'PENDING':
             reservation.status = 'APPROVED'
         
         reservation.save()
@@ -216,7 +240,7 @@ def cancel_reservation(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
     
     # Check if user has permission to cancel
-    if request.user != reservation.user and not is_admin_user(request.user):
+    if request.user != reservation.user and not request.user.is_staff:
         messages.error(request, 'You do not have permission to cancel this reservation.')
         return redirect('home')
     
@@ -226,6 +250,62 @@ def cancel_reservation(request, pk):
     
     messages.success(request, 'Reservation has been cancelled successfully.')
     return redirect('my-reservations')
+
+
+@login_required
+def profile(request):
+    """View for displaying and updating user profile."""
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(
+            request.POST, 
+            request.FILES, 
+            instance=request.user.profile
+        )
+        
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile was successfully updated!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    
+    return render(request, 'booking/profile.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
+
+
+@login_required
+def profile_update(request):
+    """View for updating user profile (alternative to the combined profile view)."""
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(
+            request.POST, 
+            request.FILES, 
+            instance=request.user.profile
+        )
+        
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile was successfully updated!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    
+    return render(request, 'booking/profile_update.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
 
 
 @login_required
@@ -250,7 +330,7 @@ def my_reservations(request):
 
 
 @login_required
-@user_passes_test(is_admin_user)
+@user_passes_test(lambda u: u.is_staff)
 def admin_dashboard(request):
     """Admin dashboard for managing reservations and rooms."""
     # Get pending reservations that need approval
@@ -275,7 +355,7 @@ def admin_dashboard(request):
 
 
 @login_required
-@user_passes_test(is_admin_user)
+@user_passes_test(lambda u: u.is_staff)
 def manage_rooms(request):
     """View for managing rooms (admin only)."""
     rooms = Room.objects.all().order_by('name')
@@ -283,7 +363,7 @@ def manage_rooms(request):
 
 
 @login_required
-@user_passes_test(is_admin_user)
+@user_passes_test(lambda u: u.is_staff)
 def manage_reservations(request):
     """View for managing all reservations (admin only)."""
     reservations = Reservation.objects.all().order_by('-start_time')
@@ -349,51 +429,67 @@ def get_room_availability(request, room_id):
         return JsonResponse({'error': 'Date parameter is required'}, status=400)
     
     try:
-        date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        # Parse the date and make it timezone-aware
+        naive_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        tz = timezone.get_current_timezone()
+        start_of_day = timezone.make_aware(datetime.combine(naive_date, time(0, 0)), tz)
     except ValueError:
         return JsonResponse({'error': 'Invalid date format. Use YYYY-MM-DD'}, status=400)
     
     room = get_object_or_404(Room, id=room_id)
     
+    # Define the working hours (9 AM to 5 PM)
+    workday_start = timezone.make_aware(datetime.combine(naive_date, time(9, 0)), tz)
+    workday_end = timezone.make_aware(datetime.combine(naive_date, time(17, 0)), tz)
+    
     # Get all reservations for this room on the given date
     reservations = room.reservations.filter(
-        start_time__date=date,
+        start_time__date=naive_date,
         status__in=['PENDING', 'APPROVED']
     ).order_by('start_time')
     
     # Generate time slots (9 AM to 5 PM, 1-hour slots)
     time_slots = []
-    start_time = datetime.combine(date, datetime_time(9, 0))
-    end_time = datetime.combine(date, datetime_time(17, 0))
+    current_time = workday_start
     
-    current_time = start_time
-    while current_time < end_time:
+    while current_time < workday_end:
         slot_end = current_time + timedelta(hours=1)
         
         # Check if this time slot is available
         is_available = True
         for res in reservations:
-            if not (res.end_time <= current_time or res.start_time >= slot_end):
+            # Make sure we're comparing timezone-aware datetimes
+            res_start = timezone.localtime(res.start_time)
+            res_end = timezone.localtime(res.end_time)
+            
+            if not (res_end <= current_time or res_start >= slot_end):
                 is_available = False
                 break
         
         time_slots.append({
-            'start': current_time.strftime('%H:%M'),
-            'end': slot_end.strftime('%H:%M'),
-            'is_available': is_available
+            'start': current_time.astimezone(tz).strftime('%H:%M'),
+            'end': slot_end.astimezone(tz).strftime('%H:%M'),
+            'available': is_available
         })
         
         current_time = slot_end
     
     return JsonResponse({
         'date': date_str,
-        'room': room.name,
+        'room_id': room_id,
         'time_slots': time_slots
     })
+    
+    def test_func(self):
+        return is_admin_user(self.request.user)
+    
+    def form_valid(self, form):
+        messages.success(self.request, 'Room created successfully!')
+        return super().form_valid(form)
 
 
-# Admin CRUD views for rooms
 class RoomCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    """View for creating a new room (admin only)."""
     model = Room
     form_class = RoomForm
     template_name = 'booking/admin/room_form.html'
@@ -408,6 +504,7 @@ class RoomCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 
 class RoomUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """View for updating an existing room (admin only)."""
     model = Room
     form_class = RoomForm
     template_name = 'booking/admin/room_form.html'
@@ -422,7 +519,7 @@ class RoomUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 @login_required
-@user_passes_test(is_admin_user)
+@user_passes_test(lambda u: u.is_staff)
 @require_http_methods(['POST'])
 def delete_room(request, pk):
     """Delete a room (admin only)."""
@@ -448,7 +545,7 @@ def delete_room(request, pk):
 
 
 @login_required
-@user_passes_test(is_admin_user)
+@user_passes_test(lambda u: u.is_staff)
 @require_http_methods(['POST'])
 def update_reservation_status(request, pk, status):
     """Update reservation status (admin only)."""

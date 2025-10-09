@@ -1,0 +1,145 @@
+{% extends 'Base.html' %}
+
+{% block title %}Update Profile - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Update Profile</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-4 text-center">
+                                <div class="mb-3">
+                                    {% if user.profile.avatar %}
+                                        <img id="avatar-preview" 
+                                             src="{{ user.profile.avatar.url }}" 
+                                             alt="Profile Picture" 
+                                             class="img-fluid rounded-circle mb-2"
+                                             style="width: 150px; height: 150px; object-fit: cover;">
+                                    {% else %}
+                                        <div id="avatar-preview" 
+                                             class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center mb-2" 
+                                             style="width: 150px; height: 150px; margin: 0 auto; font-size: 3rem;">
+                                            {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {{ profile_form.avatar }}
+                                <small class="form-text text-muted">Recommended size: 300x300 pixels</small>
+                            </div>
+                            
+                            <div class="col-md-8">
+                                <h5>Account Information</h5>
+                                <div class="mb-3">
+                                    {{ user_form.first_name.label_tag }}
+                                    {{ user_form.first_name }}
+                                    {% if user_form.first_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.first_name.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    {{ user_form.last_name.label_tag }}
+                                    {{ user_form.last_name }}
+                                    {% if user_form.last_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.last_name.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    {{ user_form.email.label_tag }}
+                                    {{ user_form.email }}
+                                    {% if user_form.email.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.email.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <h5 class="mb-3">Profile Information</h5>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    {{ profile_form.phone_number.label_tag }}
+                                    {{ profile_form.phone_number }}
+                                    {% if profile_form.phone_number.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ profile_form.phone_number.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    {{ profile_form.department.label_tag }}
+                                    {{ profile_form.department }}
+                                    {% if profile_form.department.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ profile_form.department.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="{% url 'booking:profile' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i> Back to Profile
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-1"></i> Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+// Preview avatar before upload
+document.getElementById('id_avatar').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = document.getElementById('avatar-preview');
+            if (preview.tagName === 'IMG') {
+                preview.src = e.target.result;
+            } else {
+                // If it's the default div, replace with an image
+                const img = document.createElement('img');
+                img.id = 'avatar-preview';
+                img.src = e.target.result;
+                img.className = 'img-fluid rounded-circle mb-2';
+                img.style.width = '150px';
+                img.style.height = '150px';
+                img.style.objectFit = 'cover';
+                preview.parentNode.replaceChild(img, preview);
+            }
+        }
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+{% endblock %}
+
+{% endblock %}

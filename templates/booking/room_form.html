@@ -1,0 +1,50 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{% if object %}Update{% else %}Add{% endif %} Room</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary">
+                                {% if object %}Update{% else %}Create{% endif %} Room
+                            </button>
+                            <a href="{% url 'manage-rooms' %}" class="btn btn-secondary">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Preview image before upload
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#image-preview').attr('src', e.target.result);
+                $('#image-preview').removeClass('d-none');
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#id_image").change(function() {
+        readURL(this);
+    });
+</script>
+{% endblock %}

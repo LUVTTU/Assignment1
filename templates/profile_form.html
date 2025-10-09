@@ -91,7 +91,7 @@
                         </div>
                         
                         <div class="form-group text-right">
-                            <a href="{% if form.instance.pk %}{% url 'profile_detail' username=request.user.username %}{% else %}{% url 'index' %}{% endif %}" 
+                            <a href="{% if form.instance.pk %}{% url 'users:profile_detail' username=request.user.username %}{% else %}{% url 'booking:home' %}{% endif %}" 
                                class="btn btn-outline-secondary">
                                 Cancel
                             </a>
