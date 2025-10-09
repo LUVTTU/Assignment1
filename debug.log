@@ -4035,3 +4035,211 @@ INFO 2025-10-09 22:02:35,189 autoreload C:\Users\GGPC\Documents\GitHub\Assignmen
 INFO 2025-10-09 22:02:35,333 autoreload Watching for file changes with StatReloader
 INFO 2025-10-09 22:02:35,815 autoreload Watching for file changes with StatReloader
 INFO 2025-10-09 22:06:11,920 basehttp "GET / HTTP/1.1" 200 16960
+INFO 2025-10-09 22:11:12,595 autoreload Watching for file changes with StatReloader
+ERROR 2025-10-09 22:11:22,138 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\middleware.py", line 11, in process_request
+    if hasattr(request, 'user') and request.user.is_authenticated:
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\__init__.py", line 304, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\__init__.py", line 95, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 629, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+ERROR 2025-10-09 22:11:23,590 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 403, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 74, in get
+    return self._session.get(key, default)
+           ^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 629, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+ERROR 2025-10-09 22:11:23,592 basehttp "GET / HTTP/1.1" 500 158790
+INFO 2025-10-09 22:12:10,940 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:10,944 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:10,982 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:11,169 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:11,399 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:11,891 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:11,914 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:11,919 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:12,046 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:12,293 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:39,292 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:39,372 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:39,383 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:39,390 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:39,611 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:12:40,098 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:40,214 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:40,264 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:40,265 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:12:40,507 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:16:12,919 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
+INFO 2025-10-09 22:19:15,238 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:19:15,245 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:19:15,296 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:19:15,898 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:19:15,898 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:19:15,930 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:20:12,106 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:20:18,869 basehttp "GET / HTTP/1.1" 200 16960
+INFO 2025-10-09 22:20:28,731 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
