@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     
     # Local apps
-    'booking.apps.BookingConfig',
+    'booking',
 ]
 
 MIDDLEWARE = [
@@ -94,10 +94,14 @@ WSGI_APPLICATION = 'Assignment1.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Database configuration using environment variables
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
