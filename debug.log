@@ -1,1 +1,34 @@
 INFO 2025-10-10 12:30:57,810 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:43:26,849 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:44:47,512 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:44:47,871 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:44:47,873 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:44:48,210 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:44:57,030 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:46:01,171 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:46:01,326 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:46:01,521 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:46:01,671 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:46:39,991 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:46:40,213 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:46:40,319 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:46:40,547 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:46:58,304 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:46:58,647 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:46:59,132 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:46:59,491 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:47:07,216 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:47:07,552 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:47:08,052 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:47:08,409 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:47:28,875 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:47:40,437 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:47:40,769 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:48:30,645 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\.venv\Lib\site-packages\django\contrib\staticfiles\utils.py changed, reloading.
+INFO 2025-10-10 12:48:31,009 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:49:31,123 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:49:31,475 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:50:06,858 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 12:50:07,221 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:51:36,989 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 12:51:38,850 basehttp "GET / HTTP/1.1" 200 20589
