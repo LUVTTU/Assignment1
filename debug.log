@@ -4002,3 +4002,36 @@ INFO 2025-10-09 21:53:05,780 autoreload Watching for file changes with StatReloa
 INFO 2025-10-09 21:53:06,183 autoreload Watching for file changes with StatReloader
 INFO 2025-10-09 21:53:06,212 autoreload Watching for file changes with StatReloader
 INFO 2025-10-09 21:53:06,213 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 21:57:43,670 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 21:57:43,804 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 21:57:43,806 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 21:57:43,821 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 21:57:44,364 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 21:57:44,582 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 21:57:44,585 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 21:57:44,585 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:00:47,134 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:00:47,737 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:00:47,799 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:00:47,823 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:00:47,829 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:00:48,439 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:00:48,488 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:00:48,488 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:01:52,744 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:01:53,296 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:01:53,444 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:01:53,602 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:01:53,610 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:01:53,992 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:01:54,230 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:01:54,231 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:02:34,357 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:02:34,370 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:02:34,672 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:02:35,017 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:02:35,018 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:02:35,189 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:02:35,333 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:02:35,815 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:06:11,920 basehttp "GET / HTTP/1.1" 200 16960
