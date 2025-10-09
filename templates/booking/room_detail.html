@@ -1,0 +1,161 @@
+{% extends 'Base.html' %}
+
+{% block title %}{{ room.name }} - Room Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'booking:home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'booking:room-list' %}">Rooms</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ room.name }}</li>
+                </ol>
+            </nav>
+
+            <div class="card mb-4">
+                <div class="row g-0">
+                    <!-- Room Image -->
+                    <div class="col-md-6">
+                        {% if room.image %}
+                            <img src="{{ room.image.url }}" class="img-fluid rounded-start" alt="{{ room.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                        {% else %}
+                            <div class="bg-light d-flex align-items-center justify-content-center" style="height: 100%; min-height: 300px;">
+                                <i class="fas fa-image fa-5x text-muted"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Room Details -->
+                    <div class="col-md-6">
+                        <div class="card-body h-100 d-flex flex-column">
+                            <h1 class="card-title">{{ room.name }}</h1>
+                            <p class="text-muted">
+                                <i class="fas fa-map-marker-alt me-2"></i>{{ room.get_building_display }}, Floor {{ room.floor }}, Room {{ room.room_number }}
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="badge bg-{{ room.is_available|yesno:'success,danger' }} mb-2">
+                                    {{ room.is_available|yesno:"Available,Unavailable" }}
+                                </span>
+                                <span class="badge bg-primary mb-2">
+                                    {{ room.get_room_type_display }}
+                                </span>
+                                <span class="badge bg-info text-dark mb-2">
+                                    <i class="fas fa-users me-1"></i> {{ room.capacity }} people
+                                </span>
+                            </div>
+
+                            <div class="room-features mb-4">
+                                <h5 class="mb-3">Room Features</h5>
+                                <div class="row">
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-tv me-2 {% if room.has_projector %}text-success{% else %}text-muted{% endif %}"></i>
+                                        Projector
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-chalkboard me-2 {% if room.has_whiteboard %}text-success{% else %}text-muted{% endif %}"></i>
+                                        Whiteboard
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-video me-2 {% if room.has_video_conference %}text-success{% else %}text-muted{% endif %}"></i>
+                                        Video Conference
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-phone me-2 {% if room.has_teleconference %}text-success{% else %}text-muted{% endif %}"></i>
+                                        Teleconference
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-wifi me-2 {% if room.has_wifi %}text-success{% else %}text-muted{% endif %}"></i>
+                                        WiFi
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-tv me-2 {% if room.has_tv %}text-success{% else %}text-muted{% endif %}"></i>
+                                        TV
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <i class="fas fa-chalkboard-teacher me-2 {% if room.has_podium %}text-success{% else %}text-muted{% endif %}"></i>
+                                        Podium
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto">
+                                <a href="{% url 'booking:reservation-create-room' room.id %}" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-calendar-plus me-2"></i>Book This Room
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Description -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">About This Room</h5>
+                    <p class="card-text">{{ room.description|linebreaksbr }}</p>
+                </div>
+            </div>
+
+            <!-- Availability Calendar -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Availability</h5>
+                    <div id="availability-calendar">
+                        <!-- Calendar will be loaded via JavaScript -->
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading availability...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to List Button -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+                <a href="{% url 'booking:room-list' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to All Rooms
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize any JavaScript for the room detail page here
+    // For example, you could load the availability calendar via AJAX
+    
+    // Example of loading availability data
+    function loadAvailability() {
+        const calendarEl = document.getElementById('availability-calendar');
+        
+        // This is a placeholder - you would typically make an AJAX call here
+        // to fetch the room's availability from your API
+        setTimeout(() => {
+            calendarEl.innerHTML = `
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Availability calendar will be implemented here. This would show the room's booking schedule.
+                </div>
+                
+                <div class="text-center my-3">
+                    <a href="{% url 'booking:reservation-create-room' room.id %}" class="btn btn-primary">
+                        <i class="fas fa-calendar-plus me-2"></i>Check Availability & Book
+                    </a>
+                </div>
+            `;
+        }, 1000);
+    }
+    
+    // Load the availability data
+    loadAvailability();
+});
+</script>
+{% endblock %}

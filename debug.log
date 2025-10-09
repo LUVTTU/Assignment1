@@ -4243,3 +4243,1634 @@ INFO 2025-10-09 22:19:15,930 autoreload Watching for file changes with StatReloa
 INFO 2025-10-09 22:20:12,106 autoreload Watching for file changes with StatReloader
 INFO 2025-10-09 22:20:18,869 basehttp "GET / HTTP/1.1" 200 16960
 INFO 2025-10-09 22:20:28,731 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
+ERROR 2025-10-09 22:23:32,525 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'signup' not found. 'signup' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:23:32,528 basehttp "GET / HTTP/1.1" 500 191982
+ERROR 2025-10-09 22:27:13,914 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'register' not found. 'register' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:27:13,916 basehttp "GET / HTTP/1.1" 500 192033
+ERROR 2025-10-09 22:28:21,809 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'register' not found. 'register' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:28:21,811 basehttp "GET / HTTP/1.1" 500 192034
+ERROR 2025-10-09 22:28:44,676 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'booking/auth/register' not found. 'booking/auth/register' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:28:44,678 basehttp "GET / HTTP/1.1" 500 192372
+ERROR 2025-10-09 22:29:01,142 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'booking.auth.register' not found. 'booking.auth.register' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:29:01,144 basehttp "GET / HTTP/1.1" 500 192372
+ERROR 2025-10-09 22:29:36,662 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'register' not found. 'register' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:29:36,665 basehttp "GET / HTTP/1.1" 500 192034
+INFO 2025-10-09 22:30:03,424 basehttp "GET / HTTP/1.1" 200 16865
+INFO 2025-10-09 22:30:05,740 basehttp "GET /register/ HTTP/1.1" 200 19704
+INFO 2025-10-09 22:30:39,972 basehttp "POST /register/ HTTP/1.1" 200 19850
+INFO 2025-10-09 22:30:45,869 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
+ERROR 2025-10-09 22:30:49,953 log Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\views.py", line 109, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\views.py", line 41, in get_success_url
+    return self.get_redirect_url() or self.get_default_redirect_url()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\views.py", line 96, in get_default_redirect_url
+    return resolve_url(settings.LOGIN_REDIRECT_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:30:49,956 basehttp "POST /accounts/login/ HTTP/1.1" 500 154497
+INFO 2025-10-09 22:31:39,132 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:31:39,713 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:31:39,884 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:31:39,945 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-09 22:31:39,970 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:31:40,468 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:31:40,735 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:31:40,745 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-09 22:31:48,715 log Forbidden (CSRF token from POST incorrect.): /accounts/login/
+WARNING 2025-10-09 22:31:48,716 basehttp "POST /accounts/login/ HTTP/1.1" 403 2503
+INFO 2025-10-09 22:31:51,324 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
+INFO 2025-10-09 22:31:55,839 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-10-09 22:32:00,000 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\context_processors.py", line 14, in notifications
+    ).count()
+      ^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+ERROR 2025-10-09 22:32:00,006 basehttp "GET / HTTP/1.1" 500 162180
+ERROR 2025-10-09 22:35:28,853 log Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\context_processors.py", line 14, in notifications
+    ).count()
+      ^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+INFO 2025-10-09 22:35:29,061 basehttp - Broken pipe from ('127.0.0.1', 65230)
+WARNING 2025-10-09 22:35:31,839 log Forbidden (CSRF token from POST incorrect.): /register/
+WARNING 2025-10-09 22:35:32,443 basehttp "POST /register/ HTTP/1.1" 403 2503
+ERROR 2025-10-09 22:35:36,313 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 41, in register
+    return render(request, 'booking/auth/register.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\context_processors.py", line 14, in notifications
+    ).count()
+      ^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+INFO 2025-10-09 22:35:36,508 basehttp - Broken pipe from ('127.0.0.1', 65354)
+ERROR 2025-10-09 22:35:39,322 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\context_processors.py", line 14, in notifications
+    ).count()
+      ^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+INFO 2025-10-09 22:35:39,513 basehttp - Broken pipe from ('127.0.0.1', 65360)
+WARNING 2025-10-09 22:35:41,761 log Forbidden (CSRF token from POST incorrect.): /accounts/login/
+WARNING 2025-10-09 22:35:42,328 basehttp "POST /accounts/login/ HTTP/1.1" 403 2503
+WARNING 2025-10-09 22:35:48,731 log Forbidden (CSRF token from POST incorrect.): /accounts/login/
+WARNING 2025-10-09 22:35:49,335 basehttp "POST /accounts/login/ HTTP/1.1" 403 2503
+ERROR 2025-10-09 22:35:53,603 log Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\context_processors.py", line 14, in notifications
+    ).count()
+      ^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+INFO 2025-10-09 22:35:53,807 basehttp - Broken pipe from ('127.0.0.1', 65369)
+ERROR 2025-10-09 22:35:58,575 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\context_processors.py", line 14, in notifications
+    ).count()
+      ^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "booking_notification" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "booking_notification" WHE...
+                                          ^
+
+ERROR 2025-10-09 22:35:58,577 basehttp "GET / HTTP/1.1" 500 162014
+INFO 2025-10-09 22:44:10,189 basehttp "GET / HTTP/1.1" 200 16865
+INFO 2025-10-09 22:44:12,264 basehttp "GET /register/ HTTP/1.1" 200 19704
+INFO 2025-10-09 22:44:14,299 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
+INFO 2025-10-09 22:44:17,329 basehttp "POST /accounts/login/ HTTP/1.1" 200 17849
+INFO 2025-10-09 22:44:25,153 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-10-09 22:44:25,173 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-09 22:44:25,364 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4177
+INFO 2025-10-09 22:44:25,820 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-09 22:44:25,855 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-09 22:44:25,855 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-09 22:44:25,856 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-09 22:44:25,856 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-09 22:44:25,868 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-09 22:44:25,890 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-09 22:44:28,955 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4346
+INFO 2025-10-09 22:44:37,280 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4346
+INFO 2025-10-09 22:44:40,366 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4177
+INFO 2025-10-09 22:44:41,571 basehttp "GET /accounts/login/ HTTP/1.1" 200 17653
+INFO 2025-10-09 22:45:13,602 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-10-09 22:45:31,474 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room_list' not found. 'room_list' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:45:31,476 basehttp "GET / HTTP/1.1" 500 192400
+ERROR 2025-10-09 22:46:26,916 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_reservations' not found. 'my_reservations' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:46:26,919 basehttp "GET / HTTP/1.1" 500 192032
+ERROR 2025-10-09 22:47:17,971 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 81, in home
+    return render(request, 'booking/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my_reservations' not found. 'my_reservations' is not a valid view function or pattern name.
+ERROR 2025-10-09 22:47:17,973 basehttp "GET / HTTP/1.1" 500 193006
+INFO 2025-10-09 22:48:04,319 basehttp "GET / HTTP/1.1" 200 19910
+ERROR 2025-10-09 22:48:13,716 log Internal Server Error: /rooms/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: booking/room_list.html, booking/room_list.html
+ERROR 2025-10-09 22:48:13,717 basehttp "GET /rooms/ HTTP/1.1" 500 89770
+ERROR 2025-10-09 22:48:22,713 log Internal Server Error: /my-reservations/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py", line 326, in my_reservations
+    return render(request, 'booking/my_reservations.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: booking/my_reservations.html
+ERROR 2025-10-09 22:48:22,714 basehttp "GET /my-reservations/ HTTP/1.1" 500 93379
+ERROR 2025-10-09 22:48:29,481 log Internal Server Error: /rooms/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: booking/room_list.html, booking/room_list.html
+ERROR 2025-10-09 22:48:29,482 basehttp "GET /rooms/ HTTP/1.1" 500 89770
+INFO 2025-10-09 22:49:11,152 basehttp "GET /rooms/ HTTP/1.1" 200 18236
+INFO 2025-10-09 22:52:02,629 basehttp "GET /rooms/ HTTP/1.1" 200 35491
+INFO 2025-10-09 22:53:01,478 basehttp "GET /rooms/ HTTP/1.1" 200 35578
+INFO 2025-10-09 22:53:10,366 basehttp "GET /rooms/ HTTP/1.1" 200 35578
+INFO 2025-10-09 22:53:32,163 basehttp "GET /rooms/ HTTP/1.1" 200 35578
+INFO 2025-10-09 22:54:40,557 basehttp "GET /rooms/ HTTP/1.1" 200 35578
+INFO 2025-10-09 22:55:22,696 basehttp "GET /rooms/ HTTP/1.1" 200 35578
+INFO 2025-10-09 22:56:10,490 basehttp "GET /rooms/ HTTP/1.1" 200 35578
+INFO 2025-10-09 22:57:22,979 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py changed, reloading.
+INFO 2025-10-09 22:57:23,002 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py changed, reloading.
+INFO 2025-10-09 22:57:23,211 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py changed, reloading.
+INFO 2025-10-09 22:57:23,307 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py changed, reloading.
+INFO 2025-10-09 22:57:24,970 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:57:24,981 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:57:25,143 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:57:25,194 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 22:57:40,334 basehttp "GET /rooms/ HTTP/1.1" 200 39032
+ERROR 2025-10-09 22:57:47,267 log Internal Server Error: /rooms/5/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: booking/room_detail.html
+ERROR 2025-10-09 22:57:47,268 basehttp "GET /rooms/5/ HTTP/1.1" 500 86753
+ERROR 2025-10-09 22:59:38,565 log Internal Server Error: /rooms/5/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' if room.has_projector else 'text-muted'' from ''text-success' if room.has_projector else 'text-muted''
+ERROR 2025-10-09 22:59:38,568 basehttp "GET /rooms/5/ HTTP/1.1" 500 214305
+INFO 2025-10-09 23:00:17,538 basehttp "GET /rooms/5/ HTTP/1.1" 200 23626
+INFO 2025-10-09 23:02:03,211 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-10-09 23:02:06,426 basehttp "GET /admin/ HTTP/1.1" 200 9026
+INFO 2025-10-09 23:02:06,468 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:02:06,473 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:02:06,473 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:02:06,473 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:02:06,473 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:02:06,478 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:02:06,524 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-09 23:02:06,637 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-09 23:02:06,637 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-09 23:02:13,401 basehttp - Broken pipe from ('127.0.0.1', 50057)
+INFO 2025-10-09 23:02:16,364 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 22935
+INFO 2025-10-09 23:02:16,435 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-09 23:02:16,435 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-09 23:02:16,439 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-09 23:02:16,448 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-09 23:02:16,476 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-09 23:02:16,517 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-09 23:02:16,518 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-09 23:02:16,521 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-09 23:02:16,521 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-09 23:02:16,597 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-10-09 23:02:16,601 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2025-10-09 23:02:16,650 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-09 23:02:16,672 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-09 23:02:19,186 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:02:19,215 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-09 23:02:19,215 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-09 23:02:19,215 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-09 23:02:28,544 basehttp "GET /admin/booking/room/8/change/ HTTP/1.1" 200 17757
+INFO 2025-10-09 23:02:28,618 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-09 23:02:28,786 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-09 23:02:31,384 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:03:23,119 basehttp - Broken pipe from ('127.0.0.1', 50060)
+INFO 2025-10-09 23:03:26,056 basehttp "POST /admin/booking/room/8/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:03:29,523 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23166
+INFO 2025-10-09 23:03:32,259 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:03:32,285 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-09 23:03:39,587 basehttp "GET /admin/booking/room/8/change/ HTTP/1.1" 200 18144
+INFO 2025-10-09 23:03:42,439 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 200 5935825
+INFO 2025-10-09 23:03:42,637 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:03:46,315 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 22935
+INFO 2025-10-09 23:03:58,620 basehttp "GET /rooms/ HTTP/1.1" 200 38952
+INFO 2025-10-09 23:04:01,286 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:04:11,213 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 22935
+INFO 2025-10-09 23:04:15,938 basehttp "GET /admin/booking/room/2/change/ HTTP/1.1" 200 17795
+INFO 2025-10-09 23:04:18,593 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:05:14,844 basehttp "POST /admin/booking/room/2/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:05:18,282 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23174
+INFO 2025-10-09 23:05:20,926 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:05:28,300 basehttp "GET /admin/booking/room/4/change/ HTTP/1.1" 200 17716
+INFO 2025-10-09 23:05:30,297 basehttp "GET /rooms/ HTTP/1.1" 200 38872
+INFO 2025-10-09 23:05:30,900 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:05:33,023 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:05:33,246 basehttp "GET /media/room_images/Executive_Boardroom.jpg HTTP/1.1" 200 5369397
+INFO 2025-10-09 23:07:15,802 basehttp "POST /admin/booking/room/4/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:07:19,003 basehttp "GET /admin/booking/room/4/change/ HTTP/1.1" 200 18319
+INFO 2025-10-09 23:07:21,678 basehttp "GET /media/room_images/Focus_Room.jpg HTTP/1.1" 200 3582953
+INFO 2025-10-09 23:07:21,881 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:07:28,689 basehttp "POST /admin/booking/room/4/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:07:31,971 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23161
+INFO 2025-10-09 23:07:34,613 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:07:40,144 basehttp "GET /admin/booking/room/1/change/ HTTP/1.1" 200 17779
+INFO 2025-10-09 23:07:42,825 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:09:01,735 basehttp "GET /rooms/ HTTP/1.1" 200 38774
+INFO 2025-10-09 23:09:04,312 basehttp "GET /media/room_images/Executive_Boardroom.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:09:04,510 basehttp "GET /media/room_images/Focus_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:09:04,708 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:09:11,648 basehttp "POST /admin/booking/room/1/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:09:14,938 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23170
+INFO 2025-10-09 23:09:17,705 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:09:36,548 basehttp "GET /admin/booking/room/12/change/ HTTP/1.1" 200 17770
+INFO 2025-10-09 23:09:39,210 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:10:07,696 basehttp "POST /admin/booking/room/12/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:10:10,944 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23164
+INFO 2025-10-09 23:10:13,675 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:10:18,220 basehttp "GET /admin/booking/room/3/change/ HTTP/1.1" 200 17754
+INFO 2025-10-09 23:10:20,913 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:10:47,001 basehttp "POST /admin/booking/room/3/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:10:50,259 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23166
+INFO 2025-10-09 23:10:53,169 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:10:54,449 basehttp "GET /rooms/ HTTP/1.1" 200 38500
+INFO 2025-10-09 23:10:57,131 basehttp "GET /media/room_images/Grand_Ballroom.jpg HTTP/1.1" 200 1614773
+INFO 2025-10-09 23:10:57,340 basehttp "GET /media/room_images/Executive_Boardroom.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:10:57,538 basehttp "GET /media/room_images/Huddle_Space.jpg HTTP/1.1" 200 4374846
+INFO 2025-10-09 23:10:57,746 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:10:57,932 basehttp "GET /media/room_images/Focus_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:10:58,151 basehttp "GET /media/room_images/Innovation_Hub.jpg HTTP/1.1" 200 3024812
+INFO 2025-10-09 23:11:05,497 basehttp "GET /admin/booking/room/5/change/ HTTP/1.1" 200 17764
+INFO 2025-10-09 23:11:08,404 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:13:46,485 basehttp "POST /admin/booking/room/5/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:13:49,884 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23168
+INFO 2025-10-09 23:13:52,592 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:14:00,347 basehttp "GET /admin/booking/room/7/change/ HTTP/1.1" 200 17761
+INFO 2025-10-09 23:14:03,121 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:15:01,144 basehttp "POST /admin/booking/room/7/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:15:04,770 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23166
+INFO 2025-10-09 23:15:07,473 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:15:12,998 basehttp "GET /admin/booking/room/11/change/ HTTP/1.1" 200 17803
+INFO 2025-10-09 23:15:15,787 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:15:46,407 basehttp "POST /admin/booking/room/11/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:15:50,095 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23166
+INFO 2025-10-09 23:15:50,135 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:15:50,143 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:15:50,143 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:15:50,143 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:15:50,143 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:15:50,303 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:15:52,822 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:15:52,836 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,517 basehttp "GET /admin/booking/room/9/change/ HTTP/1.1" 200 17754
+INFO 2025-10-09 23:16:03,561 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,568 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,568 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,568 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,568 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,569 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,571 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,571 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,571 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:03,583 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:16:06,124 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:17:24,923 basehttp "POST /admin/booking/room/9/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:17:28,364 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23167
+INFO 2025-10-09 23:17:28,406 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:28,418 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:28,538 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:31,062 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:17:31,078 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:31,078 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:31,078 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:31,078 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:35,971 basehttp "GET /admin/booking/room/6/change/ HTTP/1.1" 200 17720
+INFO 2025-10-09 23:17:36,017 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:36,017 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-09 23:17:38,710 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:18:23,926 basehttp "POST /admin/booking/room/6/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:18:27,388 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23161
+INFO 2025-10-09 23:18:30,167 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:18:35,881 basehttp "GET /admin/booking/room/10/change/ HTTP/1.1" 200 17745
+INFO 2025-10-09 23:18:38,532 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 23:19:39,925 basehttp "POST /admin/booking/room/10/change/ HTTP/1.1" 302 0
+INFO 2025-10-09 23:19:43,295 basehttp "GET /rooms/ HTTP/1.1" 200 37928
+INFO 2025-10-09 23:19:43,499 basehttp "GET /admin/booking/room/ HTTP/1.1" 200 23161
+INFO 2025-10-09 23:19:45,874 basehttp "GET /media/room_images/Executive_Boardroom.jpg HTTP/1.1" 200 5369397
+INFO 2025-10-09 23:19:46,066 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 200 5935825
+INFO 2025-10-09 23:19:46,266 basehttp "GET /media/room_images/Focus_Room.jpg HTTP/1.1" 200 3582953
+INFO 2025-10-09 23:19:46,470 basehttp "GET /media/room_images/Sky_Lounge.jpg HTTP/1.1" 200 3676367
+INFO 2025-10-09 23:19:46,663 basehttp "GET /media/room_images/Main_Auditorium.jpg HTTP/1.1" 200 4512769
+INFO 2025-10-09 23:19:46,859 basehttp "GET /media/room_images/Learning_Center.jpg HTTP/1.1" 200 2036523
+INFO 2025-10-09 23:19:48,449 basehttp "GET /media/room_images/Grand_Ballroom.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:19:48,635 basehttp "GET /media/room_images/Huddle_Space.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:19:48,824 basehttp "GET /media/room_images/Innovation_Hub.jpg HTTP/1.1" 304 0
+INFO 2025-10-09 23:19:49,218 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 200 2624064
+INFO 2025-10-09 23:19:49,309 basehttp "GET /media/room_images/Sunrise_Room.jpg HTTP/1.1" 200 5385519
+INFO 2025-10-09 23:19:49,453 basehttp "GET /media/room_images/Tech_Lab.jpg HTTP/1.1" 200 2309262
+INFO 2025-10-09 23:19:51,093 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342

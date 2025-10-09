@@ -180,10 +180,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom user model
 AUTH_USER_MODEL = 'auth.User'
 
-# Login/Logout URLs
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+# Login/Logout URLs - using namespaced URLs
+LOGIN_URL = 'booking:login'
+LOGIN_REDIRECT_URL = 'booking:home'
+LOGOUT_REDIRECT_URL = 'booking:home'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For development

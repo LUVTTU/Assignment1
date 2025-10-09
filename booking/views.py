@@ -86,7 +86,7 @@ class RoomListView(ListView):
     model = Room
     template_name = 'booking/room_list.html'
     context_object_name = 'rooms'
-    paginate_by = 10
+    paginate_by = 15  # Increased from 10 to show more rooms per page
     
     def get_queryset(self):
         queryset = Room.objects.filter(is_active=True)
