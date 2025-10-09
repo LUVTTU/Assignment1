@@ -316,21 +316,18 @@
                 <!-- Links -->
                 <div class="d-flex gap-4 mb-2 mb-md-0">
                     <a href="{% url 'booking:home' %}" class="text-white text-decoration-none small">Home</a>
-                    <a href="#" class="text-white text-decoration-none small" style="opacity: 0.9;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'" onclick="alert('Categories functionality coming soon!')">Categories</a>
-                    {% if user.is_authenticated %}
-                    <a href="#" class="text-white text-decoration-none small" style="opacity: 0.9;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'" onclick="alert('Create Post functionality coming soon!')">Create Post</a>
-                    {% endif %}
+                    <a href="{% url 'booking:room-list' %}" class="text-white text-decoration-none small">Rooms</a>
                 </div>
                 
                 <!-- Social -->
                 <div class="d-flex gap-3 mb-2 mb-md-0">
                     <a href="#" class="text-white" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/LUVTTU/Assignment1" class="text-white" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 
                 <!-- Copyright -->
                 <div class="text-muted small">
-                    &copy; {% now "Y" %} Simple Blog
+                    &copy; {% now "Y" %} Room Booking
                 </div>
             </div>
         </div>

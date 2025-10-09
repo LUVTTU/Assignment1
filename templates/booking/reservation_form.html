@@ -17,7 +17,7 @@
                             <button type="submit" class="btn btn-primary">
                                 {% if object %}Update{% else %}Create{% endif %} Reservation
                             </button>
-                            <a href="{% if object %}{% url 'reservation-detail' object.pk %}{% else %}{% url 'home' %}{% endif %}" 
+                            <a href="{% if object %}{% url 'booking:reservation-detail' object.pk %}{% else %}{% url 'booking:home' %}{% endif %}" 
                                class="btn btn-secondary">
                                 Cancel
                             </a>
