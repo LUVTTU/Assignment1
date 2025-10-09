@@ -237,26 +237,26 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <a class="dropdown-item" href="#" onclick="alert('Profile functionality coming soon!'); return false;">
+                                            <a class="dropdown-item" href="{% url 'booking:profile' %}">
                                                 <i class="fas fa-user me-2"></i>My Profile
                                             </a>
                                         </li>
                                         {% if user.profile %}
                                             <li>
-                                                <a class="dropdown-item" href="#" onclick="alert('Profile update functionality coming soon!'); return false;">
+                                                <a class="dropdown-item" href="{% url 'booking:profile-update' %}">
                                                     <i class="fas fa-edit me-2"></i>Edit Profile
                                                 </a>
                                             </li>
                                         {% else %}
                                             <li>
-                                                <a class="dropdown-item" href="#" onclick="alert('Profile creation functionality coming soon!'); return false;">
+                                                <a class="dropdown-item" href="{% url 'booking:profile' %}">
                                                     <i class="fas fa-plus-circle me-2"></i>Create Profile
                                                 </a>
                                             </li>
                                         {% endif %}
                                         <li><hr class="dropdown-divider"></li>
                                         <li>
-                                            <form method="post" action="#" class="d-inline" onsubmit="alert('Logout functionality coming soon!'); return false;">
+                                            <form method="post" action="{% url 'logout' %}" class="d-inline">
                                                 {% csrf_token %}
                                                 <button type="submit" class="dropdown-item text-danger" style="background: none; border: none; width: 100%; text-align: left;">
                                                     <i class="fas fa-sign-out-alt me-2"></i>Logout

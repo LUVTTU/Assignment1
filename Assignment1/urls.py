@@ -22,16 +22,16 @@ urlpatterns = [
     
     # Favicon redirect (add favicon.ico to your static files)
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
+    
+    # Authentication URLs - includes login, logout, password reset, etc.
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 # Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# Add Django site authentication urls (for login, logout, password management)
-urlpatterns += [
-    path('accounts/', include('django.contrib.auth.urls')),
-]
+# Add any additional URL patterns here if needed
 
 # Custom error handlers
 handler400 = 'booking.views.handler400'

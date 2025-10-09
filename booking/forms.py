@@ -119,35 +119,46 @@ class ReservationForm(forms.ModelForm):
         }
     
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        
-        # Set the time inputs to use the correct format
-        self.fields['start_time'].input_formats = ['%Y-%m-%dT%H:%M']
-        self.fields['end_time'].input_formats = ['%Y-%m-%dT%H:%M']
-        
-        # Set minimum date/time to current time
-        now = timezone.now()
-        min_date = now.strftime('%Y-%m-%d')
-        min_time = now.strftime('%H:%M')
-        
-        self.fields['start_time'].widget.attrs.update({
-            'min': f"{min_date}T{min_time}",
-            'class': 'form-control datetimepicker'
-        })
-        self.fields['end_time'].widget.attrs.update({
-            'min': f"{min_date}T{min_time}",
-            'class': 'form-control datetimepicker'
-        })
-        
-        # Filter active rooms only
-        self.fields['room'].queryset = Room.objects.filter(is_active=True)
-        
-        # Only show active users in attendees
-        self.fields['attendees'].queryset = User.objects.filter(is_active=True)
-        
-        # Set initial values for new reservations
-        if not self.instance.pk:
-            self.initial['start_time'] = now + timedelta(hours=1)
+        from django.db import connection
+        try:
+            # Ensure we have a valid database connection
+            connection.ensure_connection()
+            
+            super().__init__(*args, **kwargs)
+            
+            # Set the time inputs to use the correct format
+            self.fields['start_time'].input_formats = ['%Y-%m-%dT%H:%M']
+            self.fields['end_time'].input_formats = ['%Y-%m-%dT%H:%M']
+            
+            # Set minimum date/time to current time
+            now = timezone.now()
+            min_date = now.strftime('%Y-%m-%d')
+            min_time = now.strftime('%H:%M')
+            
+            self.fields['start_time'].widget.attrs.update({
+                'min': f"{min_date}T{min_time}",
+                'class': 'form-control datetimepicker'
+            })
+            self.fields['end_time'].widget.attrs.update({
+                'min': f"{min_date}T{min_time}",
+                'class': 'form-control datetimepicker'
+            })
+            
+            # Optimize querysets
+            self.fields['room'].queryset = Room.objects.filter(is_active=True).only('id', 'name', 'room_type', 'capacity')
+            self.fields['attendees'].queryset = User.objects.filter(is_active=True).only('id', 'username', 'first_name', 'last_name')
+            
+            # Set initial values for new reservations
+            if not self.instance.pk:
+                self.initial['start_time'] = now + timedelta(hours=1)
+                
+        except Exception as e:
+            # Log the error and re-raise
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.error(f"Error initializing ReservationForm: {str(e)}")
+            # Re-raise the exception to be handled by the view
+            raise
             self.initial['end_time'] = now + timedelta(hours=2)
     
     def clean(self):

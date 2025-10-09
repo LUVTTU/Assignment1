@@ -106,12 +106,12 @@
         if (newReservationBtn) {
             newReservationBtn.addEventListener('click', function() {
                 // Check if there are any rooms available
-                fetch('{% url "api_room_list" %}')
+                fetch('{% url "booking:room-list" %}')
                     .then(response => response.json())
                     .then(data => {
                         if (data.length > 0) {
                             // Redirect to reservation page with first available room pre-selected
-                            window.location.href = `{% url 'create_reservation' %}?room_id=${data[0].id}`;
+                            window.location.href = `{% url 'booking:reservation-create' %}?room_id=${data[0].id}`;
                         } else {
                             // Show modal if no rooms are available
                             showModal('No Rooms Available', 'There are currently no rooms available for booking.');
