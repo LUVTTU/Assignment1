@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><i class="fas fa-calendar-plus"></i> Make a Reservation</h5>
                             <p class="card-text">Book a room for your next meeting or event.</p>
-                            <button class="btn btn-success btn-block" id="newReservationBtn">New Reservation</button>
+                            <a href="{% url 'booking:reservation-create' %}" class="btn btn-success btn-block">New Reservation</a>
                         </div>
                     </div>
                 </div>

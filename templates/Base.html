@@ -189,50 +189,29 @@
                                 </a>
                             </li>
                             
-                            <li class="nav-item dropdown">
-                                <a class="nav-link text-white {% if 'category' in request.resolver_match.url_name %}active fw-bold{% endif %}" 
-                                   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-folder me-1 d-lg-none"></i> Categories ⌄
+                            <!-- Rooms Button -->
+                            <li class="nav-item">
+                                <a class="nav-link text-white {% if 'room' in request.resolver_match.url_name %}active fw-bold{% endif %}" 
+                                   href="{% url 'booking:room-list' %}">
+                                    <i class="fas fa-door-open me-1"></i> Rooms
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-list me-2"></i>All Categories
-                                    </a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    {% for category in categories|slice:":5" %}
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="far fa-folder me-2"></i>{{ category.name }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                    {% if categories|length > 5 %}
-                                        <li><hr class="dropdown-divider"></li>
-                                        <li>
-                                            <a class="dropdown-item text-info" href="#">
-                                                <i class="fas fa-ellipsis-h me-2"></i>View All Categories
-                                            </a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
                             </li>
                             
                             {% if user.is_authenticated %}
                             <li class="nav-item d-lg-none">
-                                <a class="nav-link text-white" href="#">
-                                    <i class="fas fa-plus-circle me-1"></i> New Post
+                                <a class="nav-link text-white" href="{% url 'booking:reservation-create' %}">
+                                    <i class="fas fa-plus-circle me-1"></i> New Reservation
                                 </a>
                             </li>
                             {% endif %}
                         </ul>
                         
                         <!-- Search Form -->
-                        <form class="d-flex my-2 my-lg-0" role="search" action="#" method="post">
-                            {% csrf_token %}
+                        <form class="d-flex my-2 my-lg-0" role="search" action="{% url 'booking:room-list' %}" method="get">
                             <div class="input-group">
                                 <input class="form-control bg-light border-secondary" type="search" 
-                                       placeholder="Search posts..." aria-label="Search" name="search_context" required
-                                       style="background-color: #e9ecef !important;">
+                                       placeholder="Search Rooms..." aria-label="Search" name="q" 
+                                       value="{{ request.GET.q }}" style="background-color: #e9ecef !important;">
                                 <button class="btn btn-outline-light text-white border-white" type="submit">
                                     <i class="fas fa-search"></i>
                                     <span class="d-none d-sm-inline ms-1">Search</span>
@@ -310,6 +289,19 @@
         {% endblock %}
     </div> <!-- End content-wrapper -->
     
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <span id="toastMessage"></span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    
     <footer class="py-4" style="background: linear-gradient(135deg, var(--dark-purple), var(--bs-primary)); color: white;">
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center">
@@ -380,33 +372,40 @@
             return new bootstrap.Tooltip(tooltipTriggerEl)
         });
         
-        // Initialize toasts
-        var toastEl = document.getElementById('permissionToast');
-        var toastMessage = document.getElementById('toastMessage');
-        var toast = null;
+        // Initialize success toast
+        var successToastEl = document.getElementById('successToast');
+        var successToastMessage = document.getElementById('toastMessage');
+        var successToast = null;
         
-        if (toastEl) {
-            toast = new bootstrap.Toast(toastEl, {
+        if (successToastEl) {
+            successToast = new bootstrap.Toast(successToastEl, {
                 autohide: true,
                 delay: 5000
             });
         }
         
-        // Function to show toast with custom message
-        function showToast(message) {
-            if (toast && toastMessage) {
-                toastMessage.textContent = message;
-                toast.show();
+        // Function to show success toast with custom message
+        function showSuccessToast(message) {
+            if (successToast && successToastMessage) {
+                successToastMessage.textContent = message;
+                successToast.show();
             }
         }
         
-        // Check for URL parameters to show toast
+        // Check for messages to show in toast
         document.addEventListener('DOMContentLoaded', function() {
+            // Check for success messages
+            const successMessages = document.querySelectorAll('.alert-success[data-toast="true"]');
+            if (successMessages.length > 0) {
+                showSuccessToast(successMessages[0].textContent.trim());
+            }
+            
+            // Check for URL parameters
             const urlParams = new URLSearchParams(window.location.search);
             const error = urlParams.get('error');
             
             if (error === 'permission_denied') {
-                showToast('You do not have permission to perform this action.');
+                showSuccessToast('You do not have permission to perform this action.');
                 // Clean up the URL
                 const cleanUrl = window.location.pathname;
                 window.history.replaceState({}, document.title, cleanUrl);
@@ -434,5 +433,8 @@
             }
         });
     </script>
+    
+    <!-- Extra JavaScript from child templates -->
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

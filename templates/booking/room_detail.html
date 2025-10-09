@@ -25,6 +25,8 @@
                                 <i class="fas fa-image fa-5x text-muted"></i>
                             </div>
                         {% endif %}
+                        <!-- Hidden element to store room ID for JavaScript -->
+                        <div id="room-id" data-room-id="{{ room.id }}" style="display: none;"></div>
                     </div>
                     
                     <!-- Room Details -->
@@ -36,8 +38,8 @@
                             </p>
                             
                             <div class="mb-3">
-                                <span class="badge bg-{{ room.is_available|yesno:'success,danger' }} mb-2">
-                                    {{ room.is_available|yesno:"Available,Unavailable" }}
+                                <span class="badge bg-{{ room.is_active|yesno:'success,danger' }} mb-2">
+                                    {{ room.is_active|yesno:"Available,Unavailable" }}
                                 </span>
                                 <span class="badge bg-primary mb-2">
                                     {{ room.get_room_type_display }}
@@ -102,14 +104,65 @@
             <!-- Availability Calendar -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title mb-4">Availability</h5>
-                    <div id="availability-calendar">
-                        <!-- Calendar will be loaded via JavaScript -->
-                        <div class="text-center py-5">
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="card-title mb-0">Weekly Availability</h5>
+                        <div class="btn-group" role="group">
+                            <button id="prev-week" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button id="current-week" class="btn btn-outline-secondary btn-sm">
+                                This Week
+                            </button>
+                            <button id="next-week" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="availability-calendar-container" style="max-height: 600px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 0.375rem;">
+                        <table class="table table-bordered mb-0" style="table-layout: fixed; width: 100%;">
+                            <thead class="table-light" style="position: sticky; top: 0; z-index: 10; background: white;">
+                                <tr>
+                                    <th style="width: 100px; min-width: 100px;">Time</th>
+                                    <th class="text-center">Mon<br><span class="date-display"></span></th>
+                                    <th class="text-center">Tue<br><span class="date-display"></span></th>
+                                    <th class="text-center">Wed<br><span class="date-display"></span></th>
+                                    <th class="text-center">Thu<br><span class="date-display"></span></th>
+                                    <th class="text-center">Fri<br><span class="date-display"></span></th>
+                                    <th class="text-center">Sat<br><span class="date-display"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="time-slots" style="display: block;">
+                                <!-- Time slots will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center flex-wrap" style="gap: 1.5rem;">
+                            <!-- Available -->
+                            <div class="d-flex align-items-center">
+                                <div class="availability-legend available me-2 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-calendar-check text-success" style="font-size: 0.8rem;"></i>
+                                </div>
+                                <small class="text-muted">Available</small>
                             </div>
-                            <p class="mt-2">Loading availability...</p>
+                            
+                            <!-- Booked -->
+                            <div class="d-flex align-items-center">
+                                <div class="availability-legend booked me-2 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-calendar-times text-danger" style="font-size: 0.8rem;"></i>
+                                </div>
+                                <small class="text-muted">Booked</small>
+                            </div>
+                            
+                            <!-- Unavailable -->
+                            <div class="d-flex align-items-center">
+                                <div class="availability-legend unavailable me-2 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-ban text-muted" style="font-size: 0.8rem;"></i>
+                                </div>
+                                <small class="text-muted">Unavailable</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,36 +179,167 @@
 </div>
 {% endblock %}
 
-{% block extra_js %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize any JavaScript for the room detail page here
-    // For example, you could load the availability calendar via AJAX
-    
-    // Example of loading availability data
-    function loadAvailability() {
-        const calendarEl = document.getElementById('availability-calendar');
-        
-        // This is a placeholder - you would typically make an AJAX call here
-        // to fetch the room's availability from your API
-        setTimeout(() => {
-            calendarEl.innerHTML = `
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle me-2"></i>
-                    Availability calendar will be implemented here. This would show the room's booking schedule.
-                </div>
-                
-                <div class="text-center my-3">
-                    <a href="{% url 'booking:reservation-create-room' room.id %}" class="btn btn-primary">
-                        <i class="fas fa-calendar-plus me-2"></i>Check Availability & Book
-                    </a>
-                </div>
-            `;
-        }, 1000);
+{% load static %}
+
+<style>
+    /* Calendar Styles */
+    .availability-calendar {
+        font-size: 0.9rem;
     }
     
-    // Load the availability data
-    loadAvailability();
-});
-</script>
+    .availability-calendar-container {
+        scrollbar-width: thin;
+        scrollbar-color: #adb5bd #f8f9fa;
+    }
+    
+    .availability-calendar-container::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .availability-calendar-container::-webkit-scrollbar-track {
+        background: #f8f9fa;
+    }
+    
+    .availability-calendar-container::-webkit-scrollbar-thumb {
+        background-color: #adb5bd;
+        border-radius: 4px;
+    }
+    
+    .availability-slot {
+        padding: 6px 4px;
+        border-radius: 4px;
+        margin: 1px 0;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+    
+    /* Available Slot */
+    .availability-slot.available {
+        background-color: rgba(40, 167, 69, 0.1);
+        border: 1px solid rgba(40, 167, 69, 0.3);
+    }
+    
+    .availability-slot.available:hover {
+        background-color: rgba(40, 167, 69, 0.2);
+        transform: scale(1.02);
+        z-index: 1;
+    }
+    
+    /* Booked Slot */
+    .availability-slot.booked {
+        background-color: rgba(220, 53, 69, 0.1);
+        border: 1px solid rgba(220, 53, 69, 0.3);
+        opacity: 0.7;
+    }
+    
+    /* Unavailable Slot */
+    .availability-slot.unavailable {
+        background-color: rgba(108, 117, 125, 0.1);
+        border: 1px dashed rgba(108, 117, 125, 0.3);
+        opacity: 0.5;
+    }
+    
+    /* Loading State */
+    .availability-slot.loading {
+        background-color: rgba(255, 193, 7, 0.1);
+        border: 1px dashed rgba(255, 193, 7, 0.5);
+    }
+    
+    /* Hover Effects */
+    .availability-slot:hover {
+        z-index: 2;
+    }
+    
+    /* Legend */
+    .availability-legend {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .legend-color {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+    }
+    
+    .legend-available { background-color: rgba(40, 167, 69, 0.2); border: 1px solid rgba(40, 167, 69, 0.5); }
+    .legend-booked { background-color: rgba(220, 53, 69, 0.2); border: 1px solid rgba(220, 53, 69, 0.5); }
+    .legend-unavailable { background-color: rgba(108, 117, 125, 0.1); border: 1px dashed rgba(108, 117, 125, 0.3); }
+</style>
+
+
+{% block extra_js %}
+<!-- Load the main room detail JavaScript -->
+<script src="{% static 'booking/js/room_detail.js' %}"></script>
 {% endblock %}
+
+{% block extra_css %}
+<style>
+.availability-slot {
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+.availability-slot.available {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+}
+.availability-slot.booked {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+    cursor: not-allowed;
+}
+.availability-slot.unavailable {
+    background-color: #e2e3e5;
+    border-left: 4px solid #6c757d;
+    cursor: not-allowed;
+}
+.availability-slot:hover:not(.booked):not(.unavailable) {
+    transform: scale(1.02);
+    z-index: 1;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.availability-legend {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+.availability-legend.available {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+}
+.availability-legend.booked {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+.availability-legend.unavailable {
+    background-color: #e2e3e5;
+    border-left: 4px solid #6c757d;
+}
+.date-display {
+    font-weight: normal;
+    font-size: 0.8em;
+    color: #6c757d;
+}
+</style>
+{% endblock %}
+
+

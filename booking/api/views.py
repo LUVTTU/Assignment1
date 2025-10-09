@@ -67,7 +67,11 @@ class RoomViewSet(viewsets.ReadOnlyModelViewSet):
             )
             
         try:
+            # Parse the date and make it timezone-aware
             date = datetime.strptime(date_str, '%Y-%m-%d').date()
+            tz = timezone.get_current_timezone()
+            start_of_day = timezone.make_aware(datetime.combine(date, time.min), tz)
+            end_of_day = timezone.make_aware(datetime.combine(date, time.max), tz)
         except ValueError:
             return Response(
                 {'error': 'Invalid date format. Use YYYY-MM-DD'}, 
@@ -80,25 +84,50 @@ class RoomViewSet(viewsets.ReadOnlyModelViewSet):
             status__in=['PENDING', 'APPROVED']
         ).order_by('start_time')
         
-        # Generate time slots (9 AM to 5 PM, 1-hour slots)
+        # Generate time slots (9 AM to 5 PM, 10-minute slots)
         time_slots = []
-        start_time = datetime.combine(date, time(9, 0))
-        end_time = datetime.combine(date, time(17, 0))
+        start_time = timezone.make_aware(datetime.combine(date, time(9, 0)), tz)
+        end_time = timezone.make_aware(datetime.combine(date, time(17, 0)), tz)
         
         current_time = start_time
         while current_time < end_time:
-            slot_end = current_time + timedelta(hours=1)
+            slot_end = current_time + timedelta(minutes=10)  # Changed to 10-minute intervals
             
-            # Check if this time slot is available
+            # Convert current slot times to the same timezone for comparison
+            current_slot_start = current_time.astimezone(tz)
+            current_slot_end = slot_end.astimezone(tz)
+            
+            # Debug log
+            print(f"\nChecking slot: {current_slot_start.time()} - {current_slot_end.time()}")
+            
+            # By default, assume the slot is available
             is_available = True
-            for res in reservations:
-                if not (res.end_time <= current_time or res.start_time >= slot_end):
-                    is_available = False
-                    break
+            
+            # If there are no reservations, the slot is available
+            if not reservations.exists():
+                print("  No reservations for this room on this date")
+            else:
+                for res in reservations:
+                    # Ensure reservation times are in the same timezone
+                    res_start = res.start_time.astimezone(tz)
+                    res_end = res.end_time.astimezone(tz)
+                    
+                    # Debug log
+                    print(f"  Checking against reservation: {res_start.time()} - {res_end.time()}")
+                    
+                    # Check for overlap - if any part of the reservation is within our time slot
+                    if (res_start < current_slot_end and res_end > current_slot_start):
+                        print(f"  !!! CONFLICT DETECTED - Marking as BOOKED !!!")
+                        is_available = False
+                        break
+                    else:
+                        print("  No conflict with this reservation")
+            
+            print(f"  Final status: {'AVAILABLE' if is_available else 'BOOKED'}")
             
             time_slots.append({
-                'start': current_time.strftime('%H:%M'),
-                'end': slot_end.strftime('%H:%M'),
+                'start': current_time.astimezone(tz).strftime('%H:%M'),
+                'end': slot_end.astimezone(tz).strftime('%H:%M'),
                 'is_available': is_available,
                 'datetime_start': current_time.isoformat(),
                 'datetime_end': slot_end.isoformat()

@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta, datetime, time
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages, auth
@@ -11,6 +11,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.forms import UserChangeForm
 from django.views.decorators.http import require_http_methods
 from django.urls import reverse_lazy
+
+
+def is_admin_user(user):
+    """Check if the user is an admin."""
+    return user.is_authenticated and (user.is_staff or user.is_superuser)
 
 from .forms import (
     UserRegistrationForm, 
@@ -91,17 +96,39 @@ class RoomListView(ListView):
     def get_queryset(self):
         queryset = Room.objects.filter(is_active=True)
         
-        # Apply filters
-        room_type = self.request.GET.get('room_type')
+        # Get search query
+        search_query = self.request.GET.get('q', '').strip()
+        
+        # Get capacity from search query if it's a number
+        capacity_from_search = None
+        if search_query and search_query.isdigit():
+            capacity_from_search = int(search_query)
+            # Remove capacity from search query
+            search_query = ''
+        
+        # Apply text-based search if there's a search query
+        if search_query:
+            queryset = queryset.filter(
+                Q(name__icontains=search_query) |
+                Q(description__icontains=search_query) |
+                Q(room_type__icontains=search_query)
+            )
+        
+        # Apply capacity filter (from search or dedicated field)
         capacity = self.request.GET.get('capacity')
+        if capacity and capacity.isdigit():
+            queryset = queryset.filter(capacity__gte=int(capacity))
+        elif capacity_from_search is not None:
+            queryset = queryset.filter(capacity__gte=capacity_from_search)
+        
+        # Apply other filters
+        room_type = self.request.GET.get('room_type')
         has_projector = self.request.GET.get('has_projector') == 'on'
         has_whiteboard = self.request.GET.get('has_whiteboard') == 'on'
         has_video = self.request.GET.get('has_video') == 'on'
         
         if room_type:
             queryset = queryset.filter(room_type=room_type)
-        if capacity:
-            queryset = queryset.filter(capacity__gte=capacity)
         if has_projector:
             queryset = queryset.filter(has_projector=True)
         if has_whiteboard:
@@ -174,8 +201,8 @@ def create_reservation(request, room_id=None):
                 reservation.save()
                 form.save_m2m()  # Save many-to-many data
                 
-                messages.success(request, 'Your reservation has been submitted successfully!')
-                return redirect('reservation-detail', pk=reservation.id)
+                messages.success(request, 'Your reservation has been submitted successfully!', extra_tags='toast')
+                return redirect('booking:home')
     else:
         initial = {}
         if room:
