@@ -7094,3 +7094,381 @@ INFO 2025-10-10 00:35:38,142 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
 INFO 2025-10-10 00:35:38,210 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 21149
 WARNING 2025-10-10 00:35:40,951 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
 WARNING 2025-10-10 00:35:40,951 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:43:00,405 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:43:00,539 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 21349
+INFO 2025-10-10 00:43:01,003 basehttp "GET /rooms/?q=war HTTP/1.1" 200 18206
+WARNING 2025-10-10 00:43:03,020 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:43:03,020 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:43:03,240 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 00:43:03,330 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 00:43:05,813 basehttp "GET /rooms/?q=6 HTTP/1.1" 200 34634
+INFO 2025-10-10 00:44:49,523 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:44:49,590 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 21393
+WARNING 2025-10-10 00:44:52,091 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:44:52,091 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:45:33,216 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:45:33,296 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 21391
+WARNING 2025-10-10 00:45:35,805 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:45:35,805 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:45:36,274 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:45:36,467 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:45:36,661 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:45:36,873 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:45:37,054 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:26,139 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:46:26,233 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 22233
+WARNING 2025-10-10 00:46:28,790 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:46:28,791 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:46:29,472 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:29,663 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:29,860 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:46:30,071 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:30,268 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:39,971 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:46:40,019 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 22483
+WARNING 2025-10-10 00:46:42,564 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:46:42,566 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:46:43,158 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:43,349 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:46:43,558 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:43,762 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:46:43,963 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:47:53,177 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:47:53,259 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23074
+WARNING 2025-10-10 00:47:55,970 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:47:55,970 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:47:56,647 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:47:56,855 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:47:57,067 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:47:57,281 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:47:57,469 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:48:04,808 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:48:04,856 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23222
+WARNING 2025-10-10 00:48:07,433 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:48:07,433 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:48:08,025 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:48:08,223 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:48:08,424 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:48:08,644 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:48:08,833 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:49:29,036 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:49:29,120 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23243
+WARNING 2025-10-10 00:49:31,788 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:49:31,788 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:49:38,551 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:49:38,621 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23192
+WARNING 2025-10-10 00:49:41,202 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:49:41,203 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:49:45,572 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:49:45,672 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23226
+WARNING 2025-10-10 00:49:48,283 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:49:48,283 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:49:48,706 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:49:48,907 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:49:49,104 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:49:49,328 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:49:49,537 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:50:16,420 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:50:16,463 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+WARNING 2025-10-10 00:50:19,128 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:50:19,129 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:50:19,593 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:50:19,792 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:50:19,991 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:50:20,208 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:50:20,405 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:51:07,832 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:51:07,931 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23963
+WARNING 2025-10-10 00:51:10,521 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:51:10,521 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:51:11,315 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:11,516 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:11,717 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:51:11,925 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:12,145 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:21,254 basehttp "GET /rooms/10/ HTTP/1.1" 200 27487
+INFO 2025-10-10 00:51:21,302 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24141
+WARNING 2025-10-10 00:51:23,917 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:51:23,918 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:51:24,445 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:51:24,651 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:24,863 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:25,078 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:51:25,328 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:52:35,688 basehttp "GET /rooms/10/ HTTP/1.1" 200 28127
+INFO 2025-10-10 00:52:35,855 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+WARNING 2025-10-10 00:52:38,471 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:52:38,471 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:52:38,678 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 00:52:38,753 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 00:52:38,968 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:52:39,167 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:52:39,390 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:52:39,600 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 00:52:41,569 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:54:57,782 basehttp "GET /rooms/10/ HTTP/1.1" 200 28127
+INFO 2025-10-10 00:54:57,960 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24774
+WARNING 2025-10-10 00:55:00,483 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 00:55:00,483 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 00:55:01,134 basehttp "GET /api/rooms/10/availability/?date=2025-10-10 HTTP/1.1" 200 495
+INFO 2025-10-10 00:55:01,342 basehttp "GET /api/rooms/10/availability/?date=2025-10-07 HTTP/1.1" 200 493
+INFO 2025-10-10 00:55:01,547 basehttp "GET /api/rooms/10/availability/?date=2025-10-06 HTTP/1.1" 200 493
+INFO 2025-10-10 00:55:01,771 basehttp "GET /api/rooms/10/availability/?date=2025-10-09 HTTP/1.1" 200 493
+INFO 2025-10-10 00:55:01,983 basehttp "GET /api/rooms/10/availability/?date=2025-10-08 HTTP/1.1" 200 493
+INFO 2025-10-10 01:00:29,111 basehttp "GET /rooms/10/ HTTP/1.1" 200 28127
+INFO 2025-10-10 01:00:29,274 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24039
+WARNING 2025-10-10 01:00:31,730 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:00:31,730 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:02:16,910 basehttp "GET /rooms/10/ HTTP/1.1" 200 28127
+INFO 2025-10-10 01:02:17,075 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 23810
+INFO 2025-10-10 01:02:19,673 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 01:02:19,751 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+WARNING 2025-10-10 01:02:19,882 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:02:19,883 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+ERROR 2025-10-10 01:03:22,544 log Internal Server Error: /rooms/10/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 228, in do_block
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'extra_js' appears more than once
+ERROR 2025-10-10 01:03:22,549 basehttp "GET /rooms/10/ HTTP/1.1" 500 195479
+WARNING 2025-10-10 01:03:25,164 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:03:25,164 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+ERROR 2025-10-10 01:04:11,884 log Internal Server Error: /rooms/10/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 228, in do_block
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'extra_js' appears more than once
+ERROR 2025-10-10 01:04:11,887 basehttp "GET /rooms/10/ HTTP/1.1" 500 194378
+WARNING 2025-10-10 01:04:14,637 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:04:14,638 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+ERROR 2025-10-10 01:04:56,244 log Internal Server Error: /rooms/10/
+Traceback (most recent call last):
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 523, in parse
+    self.unclosed_block_tag(parse_until)
+  File "C:\Users\GGPC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 590, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 324: 'block'. Looking for one of: endblock.
+ERROR 2025-10-10 01:04:56,247 basehttp "GET /rooms/10/ HTTP/1.1" 500 188836
+WARNING 2025-10-10 01:04:58,893 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:04:58,894 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:05:56,336 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:05:56,499 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+WARNING 2025-10-10 01:05:59,108 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:05:59,108 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:07:04,478 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:07:04,546 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24015
+WARNING 2025-10-10 01:07:07,104 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:07:07,104 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:07:19,835 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:07:19,893 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24824
+WARNING 2025-10-10 01:07:22,484 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:07:22,484 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:07:57,411 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:07:57,487 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24823
+WARNING 2025-10-10 01:08:00,146 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:08:00,146 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:08:07,739 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:08:07,785 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+WARNING 2025-10-10 01:08:10,389 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:08:10,391 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:08:24,838 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:08:24,865 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24824
+WARNING 2025-10-10 01:08:27,623 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:08:27,623 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:09:40,189 basehttp "GET /rooms/10/ HTTP/1.1" 200 28082
+INFO 2025-10-10 01:09:40,252 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 200 24947
+WARNING 2025-10-10 01:09:42,831 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:09:42,831 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:10:30,890 basehttp "GET /rooms/10/ HTTP/1.1" 200 28547
+INFO 2025-10-10 01:10:30,957 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+WARNING 2025-10-10 01:10:33,492 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:10:33,492 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:11:03,449 basehttp "GET /rooms/10/ HTTP/1.1" 200 28972
+INFO 2025-10-10 01:11:03,525 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+WARNING 2025-10-10 01:11:06,233 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:11:06,234 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:13:16,883 basehttp "GET /rooms/10/ HTTP/1.1" 200 28972
+INFO 2025-10-10 01:13:16,947 basehttp "GET /static/booking/js/room_detail.js HTTP/1.1" 304 0
+INFO 2025-10-10 01:13:19,662 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 01:13:19,724 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+WARNING 2025-10-10 01:13:19,881 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:13:19,881 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497
+INFO 2025-10-10 01:14:10,715 basehttp "GET /rooms/10/ HTTP/1.1" 200 28976
+INFO 2025-10-10 01:14:10,862 basehttp "GET /static/booking/js/room_detail_new.js HTTP/1.1" 200 9184
+WARNING 2025-10-10 01:14:13,475 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-10 01:14:13,475 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 10497

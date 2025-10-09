@@ -26,37 +26,42 @@ function getStartOfWeek(date) {
 function generateTimeSlots() {
     const slots = [];
     const startHour = 9;  // 9 AM
-    const endHour = 17;   // 5 PM
+    const endHour = 17;   // 5 PM (inclusive)
     
-    for (let hour = startHour; hour <= endHour; hour++) {
-        for (let minute = 0; minute < 60; minute += 10) {
-            // Skip if this would go past 5 PM
-            if (hour === endHour && minute >= 0) {
-                break;
-            }
-            
-            // Format start time
-            const startTime = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-            
-            // Calculate end time (10 minutes later)
-            let endMinute = minute + 10;
-            let endHour = hour;
-            
-            if (endMinute >= 60) {
-                endMinute = 0;
-                endHour++;
-            }
-            
-            // Format end time
-            const endTime = `${endHour.toString().padStart(2, '0')}:${endMinute.toString().padStart(2, '0')}`;
-            
-            // Add to slots if it's before 5 PM
-            if (endHour < endHour || (endHour === endHour && endMinute === 0)) {
-                slots.push({ 
-                    start: startTime, 
-                    end: endTime 
-                });
-            }
+    let currentHour = startHour;
+    let currentMinute = 0;
+    
+    while (currentHour < endHour || (currentHour === endHour && currentMinute === 0)) {
+        // Format start time
+        const startTime = `${currentHour.toString().padStart(2, '0')}:${currentMinute.toString().padStart(2, '0')}`;
+        
+        // Calculate end time (10 minutes later)
+        let endMinute = currentMinute + 10;
+        let newEndHour = currentHour;
+        
+        if (endMinute >= 60) {
+            endMinute = 0;
+            newEndHour++;
+        }
+        
+        // Format end time
+        const endTime = `${newEndHour.toString().padStart(2, '0')}:${endMinute.toString().padStart(2, '0')}`;
+        
+        // Add to slots if it's before or equal to 5 PM
+        if (newEndHour < endHour || (newEndHour === endHour && endMinute === 0)) {
+            slots.push({ 
+                start: startTime,
+                end: endTime 
+            });
+        }
+        
+        // Move to next time slot
+        currentMinute += 10;
+        if (currentMinute >= 60) {
+            currentMinute = 0;
+            currentHour++;
+        }
+    }
     
     console.log('Generated', slots.length, 'time slots with 10-minute intervals');
     return slots;
@@ -66,6 +71,7 @@ function generateTimeSlots() {
 function updateCalendarHeader(startDate) {
     console.log('Updating calendar header with start date:', startDate);
     const dateElements = document.querySelectorAll('.date-display');
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     
     // Check if we found the date elements
     if (!dateElements || dateElements.length === 0) {
@@ -76,25 +82,32 @@ function updateCalendarHeader(startDate) {
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Normalize today's date for comparison
     
-    for (let i = 0; i < 7; i++) {
+    // Start from Monday (1) to Sunday (0)
+    for (let i = 1; i <= 7; i++) {
         const currentDate = new Date(startDate);
-        currentDate.setDate(startDate.getDate() + i);
+        // Adjust to show Monday as first day of the week
+        const dayOffset = i === 7 ? 0 : i; // Sunday (0) becomes the 7th day
+        currentDate.setDate(startDate.getDate() + (dayOffset - 1));
         
-        // Format date as DD/MM
+        // Get day name and date
+        const dayName = dayNames[currentDate.getDay()];
         const day = currentDate.getDate().toString().padStart(2, '0');
         const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
         
         // Only update if the element exists
-        if (dateElements[i]) {
-            dateElements[i].textContent = `${day}/${month}`;
-            
-            // Highlight today's date
-            const thElement = dateElements[i].closest('th');
-            if (thElement) {
+        const elementIndex = i - 1; // Adjust index for 0-based array
+        if (dateElements[elementIndex]) {
+            // Update the day name and date
+            const dayElement = dateElements[elementIndex].closest('th');
+            if (dayElement) {
+                // Clear existing content and update with day name and date
+                dayElement.innerHTML = `${dayName}<br><span class="date-display">${day}/${month}</span>`;
+                
+                // Highlight today's date
                 if (currentDate.toDateString() === today.toDateString()) {
-                    thElement.classList.add('table-primary');
+                    dayElement.classList.add('table-primary');
                 } else {
-                    thElement.classList.remove('table-primary');
+                    dayElement.classList.remove('table-primary');
                 }
             }
         }
@@ -107,24 +120,50 @@ function loadWeekAvailability(startDate, roomId) {
     const timeSlots = generateTimeSlots();
     let calendarHtml = '';
     
+    // Log generated time slots for debugging
+    console.log('Generated time slots:', timeSlots);
+    
     // Log the room ID being used
     console.log('Using room ID:', roomId);
     
     // Generate time slots rows
     timeSlots.forEach((slot, index) => {
         calendarHtml += `<tr>`;
-        // Time column
+        // Time column (show time range)
         calendarHtml += `<td class="align-middle text-center"><small>${slot.start} - ${slot.end}</small></td>`;
         
-        // Day columns
-        for (let i = 0; i < 7; i++) {
+        // Day columns (Monday to Sunday)
+        for (let dayIndex = 1; dayIndex <= 7; dayIndex++) {
             const currentDate = new Date(startDate);
-            currentDate.setDate(startDate.getDate() + i);
+            // Adjust to show Monday as first day of the week
+            const dayOffset = dayIndex === 7 ? 0 : dayIndex; // Sunday (0) becomes the 7th day
+            currentDate.setDate(startDate.getDate() + (dayOffset - 1));
+            
             const dayOfWeek = currentDate.getDay();
             const formattedDate = formatDate(currentDate);
-            // Ensure consistent slot ID format with loadDayAvailability
-            const slotStartTime = slot.start.split(':').join('');
-            const slotId = `${formattedDate}-${slotStartTime}`;
+            
+            // Format time to ensure consistent HH:MM format
+            const formatTime = (timeStr) => {
+                const [hours, minutes] = timeStr.split(':');
+                return `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
+            };
+            
+            const formattedStartTime = formatTime(slot.start);
+            const formattedEndTime = formatTime(slot.end);
+            
+            // Create slot ID in the format: YYYY-MM-DD-HHMM
+            // Ensure we're using the same format as the backend
+            const slotId = `${formattedDate}-${formattedStartTime.replace(':', '')}`;
+            
+            // Debug log for each slot
+            console.log('Creating slot:', {
+                dayIndex,
+                dayOfWeek,
+                formattedDate,
+                slotStart: formattedStartTime,
+                slotEnd: formattedEndTime,
+                slotId
+            });
             
             // Skip weekends (0 = Sunday, 6 = Saturday)
             if (dayOfWeek === 0 || dayOfWeek === 6) {
@@ -166,11 +205,15 @@ function loadWeekAvailability(startDate, roomId) {
 
 // Function to load availability for a specific day
 function loadDayAvailability(date, roomId) {
+    // Format date in YYYY-MM-DD format for API and data attributes
     const formattedDate = formatDate(date);
     const dayOfWeek = date.getDay();
     
+    console.log(`Loading availability for ${formattedDate} (${date.toDateString()})`);
+    
     // Skip weekends (0 = Sunday, 6 = Saturday)
     if (dayOfWeek === 0 || dayOfWeek === 6) {
+        console.log(`Skipping weekend day: ${date.toDateString()}`);
         // Mark all time slots as unavailable for weekends
         document.querySelectorAll(`[data-date="${formattedDate}"]`).forEach(element => {
             element.classList.remove('available', 'booked');
@@ -184,7 +227,10 @@ function loadDayAvailability(date, roomId) {
     }
     
     // Show loading state
-    document.querySelectorAll(`[data-date="${formattedDate}"]`).forEach(element => {
+    const slotElements = document.querySelectorAll(`[data-date="${formattedDate}"]`);
+    console.log(`Found ${slotElements.length} slot elements for ${formattedDate}`);
+    
+    slotElements.forEach(element => {
         element.classList.remove('available', 'booked', 'unavailable');
         element.classList.add('loading');
         const icon = element.querySelector('i');
@@ -192,6 +238,10 @@ function loadDayAvailability(date, roomId) {
             icon.className = 'fas fa-spinner fa-spin';
         }
     });
+    
+    if (slotElements.length === 0) {
+        console.warn(`No slot elements found for date: ${formattedDate}`);
+    }
     
     // Make AJAX call to get availability for the day
     const url = `/api/rooms/${roomId}/availability/?date=${formattedDate}`;
@@ -242,85 +292,106 @@ function loadDayAvailability(date, roomId) {
         });
         
         // Process each time slot from the API
-        console.log('Processing', data.time_slots.length, 'time slots from API');
+    console.log('Processing', data.time_slots.length, 'time slots from API for date:', formattedDate);
+    
+    // First, mark all slots as unavailable by default
+    document.querySelectorAll(`[data-date="${formattedDate}"]`).forEach(element => {
+        element.classList.remove('available', 'booked', 'loading');
+        element.classList.add('unavailable');
+        const icon = element.querySelector('i');
+        if (icon) {
+            icon.className = 'fas fa-ban text-muted';
+        }
+    });
+    
+    // Process each time slot from the API
+    data.time_slots.forEach((slot, index) => {
+        // Format the time to ensure consistent HH:MM format
+        const formatTime = (timeStr) => {
+            if (!timeStr) return '';
+            const [hours, minutes] = timeStr.toString().split(':');
+            return `${parseInt(hours, 10).toString().padStart(2, '0')}:${minutes.padStart(2, '0')}`;
+        };
         
-        data.time_slots.forEach((slot, index) => {
-            console.log(`Slot ${index + 1}:`, {
+        const formattedStartTime = formatTime(slot.start);
+        const slotTime = formattedStartTime.replace(':', '');
+        const slotId = `${formattedDate}-${slotTime}`;
+        const slotElement = document.getElementById(slotId);
+        
+        if (!slotElement) {
+            console.warn(`Could not find element for slot: ${slotId}`);
+            return;
+        }
+        
+        // Debug information
+        console.log(`Processing slot ${index + 1}/${data.time_slots.length}:`, {
+            slotId,
+            backendData: {
                 start: slot.start,
                 end: slot.end,
-                is_available: slot.is_available,
-                element: document.getElementById(`${formattedDate}-${slot.start.replace(':', '')}`)
-            });
-            // Create slot ID in the same format as in loadWeekAvailability
-            const startTime = slot.start.split(':').join('');
-            const slotId = `${formattedDate}-${startTime}`;
-            const slotElement = document.getElementById(slotId);
-            
-            // Debug information
-            console.log(`Processing slot ${index + 1}/${data.time_slots.length}:`, {
-                slotTime: `${slot.start} - ${slot.end}`,
-                isAvailable: slot.is_available,
-                slotId: slotId,
-                elementFound: !!slotElement,
-                elementId: slotElement ? slotElement.id : 'not found'
-            });
-            
-            if (slotElement) {
-                // Clear all classes first
-                slotElement.classList.remove('loading', 'available', 'booked', 'unavailable');
-                
-                // Set the appropriate class and icon based on availability
-                if (slot.is_available === true) {
-                    console.log(`✅ Slot ${slotId} is AVAILABLE`);
-                    slotElement.classList.add('available');
-                    
-                    const icon = slotElement.querySelector('i');
-                    if (icon) {
-                        icon.className = 'fas fa-calendar-check text-success me-1';
-                        icon.title = 'Available - Click to book';
-                    }
-                    
-                    // Make it interactive
-                    slotElement.setAttribute('data-bs-toggle', 'tooltip');
-                    slotElement.setAttribute('data-bs-placement', 'top');
-                    slotElement.setAttribute('title', 'Available - Click to book');
-                    slotElement.style.cursor = 'pointer';
-                    slotElement.style.transition = 'all 0.2s';
-                    
-                    // Add hover effects
-                    slotElement.onmouseover = function() {
-                        this.style.transform = 'scale(1.05)';
-                        this.style.boxShadow = '0 0 10px rgba(0,200,0,0.2)';
-                    };
-                    
-                    slotElement.onmouseout = function() {
-                        this.style.transform = 'scale(1)';
-                        this.style.boxShadow = 'none';
-                    };
-                } else {
-                    console.log(`❌ Slot ${slotId} is BOOKED`);
-                    slotElement.classList.add('booked');
-                    
-                    const icon = slotElement.querySelector('i');
-                    if (icon) {
-                        icon.className = 'fas fa-calendar-times text-danger me-1';
-                        icon.title = 'Booked';
-                    }
-                    
-                    // Make it non-interactive
-                    slotElement.setAttribute('data-bs-toggle', 'tooltip');
-                    slotElement.setAttribute('data-bs-placement', 'top');
-                    slotElement.setAttribute('title', 'Booked - This time slot is not available');
-                    slotElement.style.cursor = 'not-allowed';
-                    slotElement.style.opacity = '0.7';
-                }
-            } else {
-                console.warn('Could not find element for slot:', {
-                    slotId: slotId,
-                    availableElements: Array.from(document.querySelectorAll(`[data-date="${formattedDate}"]`)).map(el => el.id)
-                });
-            }
+                is_available: slot.is_available
+            },
+            formattedTimes: {
+                start: formattedStartTime,
+                end: formatTime(slot.end)
+            },
+            elementFound: !!slotElement,
+            elementId: slotElement ? slotElement.id : 'not found',
+            elementData: slotElement ? {
+                date: slotElement.dataset.date,
+                start: slotElement.dataset.start,
+                end: slotElement.dataset.end
+            } : null
         });
+        
+        // Clear all classes first
+        slotElement.classList.remove('loading', 'available', 'booked', 'unavailable');
+        
+        // Set the appropriate class and icon based on availability
+        if (slot.is_available === true) {
+            console.log(`✅ Slot ${slotId} is AVAILABLE`);
+            slotElement.classList.add('available');
+            
+            const icon = slotElement.querySelector('i');
+            if (icon) {
+                icon.className = 'fas fa-calendar-check text-success me-1';
+                icon.title = 'Available - Click to book';
+            }
+            
+            // Make it interactive
+            slotElement.setAttribute('data-bs-toggle', 'tooltip');
+            slotElement.setAttribute('data-bs-placement', 'top');
+            slotElement.setAttribute('title', 'Available - Click to book');
+            slotElement.style.cursor = 'pointer';
+            slotElement.style.transition = 'all 0.2s';
+            
+            // Add hover effects
+            slotElement.onmouseover = function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 0 10px rgba(0,200,0,0.2)';
+            };
+            
+            slotElement.onmouseout = function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            };
+        } else {
+            console.log(`❌ Slot ${slotId} is BOOKED`);
+            slotElement.classList.add('booked');
+            
+            const icon = slotElement.querySelector('i');
+            if (icon) {
+                icon.className = 'fas fa-calendar-times text-danger me-1';
+                icon.title = 'Booked';
+            }
+            
+            // Make it non-interactive
+            slotElement.setAttribute('data-bs-toggle', 'tooltip');
+            slotElement.setAttribute('data-bs-placement', 'top');
+            slotElement.setAttribute('title', 'Booked - This time slot is not available');
+            slotElement.style.cursor = 'not-allowed';
+            slotElement.style.opacity = '0.7';
+        }
     })
     .catch(error => {
         console.error('Error loading availability:', error);
@@ -333,7 +404,7 @@ function loadDayAvailability(date, roomId) {
             }
         });
     });
-}
+})
 
 // Function to initialize the calendar
 function initializeCalendar() {
@@ -341,17 +412,30 @@ function initializeCalendar() {
     
     // Get room ID from the template
     const roomElement = document.getElementById('room-id');
+    console.log('Room element:', roomElement);
+    
     if (!roomElement) {
         console.error('Error: Could not find room ID element');
+        // Check if we can find any elements with data-room-id
+        const elements = document.querySelectorAll('[data-room-id]');
+        console.log('Elements with data-room-id:', elements);
         return false;
     }
     
     const roomId = roomElement.getAttribute('data-room-id');
+    console.log('Room ID from data attribute:', roomId);
+    
     if (!roomId) {
-        console.error('Error: Room ID is missing');
+        console.error('Error: Room ID is missing or empty');
+        console.log('Room element:', roomElement);
+        console.log('Room element attributes:');
+        for (let i = 0; i < roomElement.attributes.length; i++) {
+            console.log(roomElement.attributes[i].name + ': ' + roomElement.attributes[i].value);
+        }
         return false;
     }
     
+    console.log('Found room ID:', roomId);
     let currentDate = new Date();
     
     try {
@@ -361,6 +445,14 @@ function initializeCalendar() {
         const currentWeekBtn = document.getElementById('current-week');
         const timeSlotsContainer = document.getElementById('time-slots');
         const dateElements = document.querySelectorAll('.date-display');
+        
+        console.log('Calendar elements found:', {
+            prevWeekBtn: !!prevWeekBtn,
+            nextWeekBtn: !!nextWeekBtn,
+            currentWeekBtn: !!currentWeekBtn,
+            timeSlotsContainer: !!timeSlotsContainer,
+            dateElements: dateElements.length
+        });
         
         if (!prevWeekBtn || !nextWeekBtn || !currentWeekBtn) {
             throw new Error('Navigation buttons not found');
@@ -475,11 +567,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Try to initialize the calendar immediately
-    const roomElement = document.getElementById('room_id');
+    const roomElement = document.getElementById('room-id');
     const roomId = roomElement ? roomElement.getAttribute('data-room-id') : null;
     
     console.log('Room element:', roomElement);
     console.log('Room ID:', roomId);
+    
+    // Debug: Check if the room ID is valid
+    if (!roomId) {
+        console.error('Could not find room ID. Make sure there is an element with id="room-id" and data-room-id attribute.');
+    }
     
     if (roomId) {
         const calendarInitialized = initializeCalendar();
@@ -532,4 +629,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>`;
         }
     }
-});}}
+});
+
+// Initialize calendar when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded, initializing calendar...');
+    initializeCalendar();
+});}
