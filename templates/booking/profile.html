@@ -66,20 +66,22 @@
                             
                             <hr>
                             
+                            {% with approved=user.reservations.filter status='APPROVED' pending=user.reservations.filter status='PENDING' %}
                             <div class="d-flex justify-content-between">
                                 <div class="text-center">
                                     <h5>{{ user.reservations.count }}</h5>
                                     <p class="text-muted mb-0">Reservations</p>
                                 </div>
                                 <div class="text-center">
-                                    <h5>{{ user.reservations.filter(status='APPROVED').count }}</h5>
+                                    <h5>{{ approved.count }}</h5>
                                     <p class="text-muted mb-0">Approved</p>
                                 </div>
                                 <div class="text-center">
-                                    <h5>{{ user.reservations.filter(status='PENDING').count }}</h5>
+                                    <h5>{{ pending.count }}</h5>
                                     <p class="text-muted mb-0">Pending</p>
                                 </div>
                             </div>
+                            {% endwith %}
                         </div>
                     </div>
                 </div>
