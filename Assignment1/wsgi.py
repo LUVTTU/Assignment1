@@ -26,3 +26,4 @@ application.add_files(Path(__file__).parent.parent / 'media', prefix='media/')
 
 
 application = get_wsgi_application()
+app = application
