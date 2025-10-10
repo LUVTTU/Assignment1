@@ -35,3 +35,28 @@ INFO 2025-10-10 12:51:38,850 basehttp "GET / HTTP/1.1" 200 20589
 INFO 2025-10-10 13:01:27,822 basehttp "GET / HTTP/1.1" 200 20589
 WARNING 2025-10-10 13:01:30,871 log Not Found: /api/categories/
 WARNING 2025-10-10 13:01:30,872 basehttp "GET /api/categories/ HTTP/1.1" 404 23160
+INFO 2025-10-10 13:08:00,882 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\wsgi.py changed, reloading.
+INFO 2025-10-10 13:08:00,886 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\wsgi.py changed, reloading.
+INFO 2025-10-10 13:08:01,271 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:08:01,272 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:08:29,563 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\wsgi.py changed, reloading.
+INFO 2025-10-10 13:08:29,568 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\wsgi.py changed, reloading.
+INFO 2025-10-10 13:08:29,917 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:08:29,918 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:09:09,556 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\.venv\Lib\site-packages\psycopg2\errors.py changed, reloading.
+INFO 2025-10-10 13:09:09,558 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\.venv\Lib\site-packages\psycopg2\errors.py changed, reloading.
+INFO 2025-10-10 13:09:09,911 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:09:09,911 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:09:30,924 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\.venv\Lib\site-packages\psycopg2\extensions.py changed, reloading.
+INFO 2025-10-10 13:09:30,928 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\.venv\Lib\site-packages\psycopg2\errors.py changed, reloading.
+INFO 2025-10-10 13:09:31,277 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:09:31,283 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:11:24,710 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 13:11:26,417 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 13:11:27,754 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 13:11:28,338 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 13:11:30,963 basehttp "GET /accounts/login/ HTTP/1.1" 200 17985
+INFO 2025-10-10 13:12:02,288 basehttp "GET /admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2025-10-10 13:12:02,306 basehttp "GET /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 200 4215
+INFO 2025-10-10 13:17:36,308 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:17:38,081 basehttp "GET / HTTP/1.1" 200 20589
