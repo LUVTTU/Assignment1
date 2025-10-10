@@ -276,58 +276,45 @@ def cancel_reservation(request, pk):
     reservation.save()
     
     messages.success(request, 'Reservation has been cancelled successfully.')
-    return redirect('my-reservations')
-
+    return redirect('booking:my-reservations')
 
 @login_required
 def profile(request):
-    """View for displaying and updating user profile."""
-    if request.method == 'POST':
-        user_form = UserForm(request.POST, instance=request.user)
-        profile_form = ProfileForm(
-            request.POST, 
-            request.FILES, 
-            instance=request.user.profile
-        )
-        
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            messages.success(request, 'Your profile was successfully updated!')
-            return redirect('profile')
-        else:
-            messages.error(request, 'Please correct the error below.')
-    else:
-        user_form = UserForm(instance=request.user)
-        profile_form = ProfileForm(instance=request.user.profile)
+    """View for displaying the user profile."""
+    # Get or create profile for the user
+    profile, created = Profile.objects.get_or_create(user=request.user)
+    
+    user_form = UserForm(instance=request.user)
+    profile_form = ProfileForm(instance=profile)
     
     return render(request, 'booking/profile.html', {
         'user_form': user_form,
         'profile_form': profile_form
     })
 
-
 @login_required
 def profile_update(request):
-    """View for updating user profile (alternative to the combined profile view)."""
+    """View for updating user profile."""
+    profile, created = Profile.objects.get_or_create(user=request.user)
+    
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(
             request.POST, 
             request.FILES, 
-            instance=request.user.profile
+            instance=profile
         )
         
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
             messages.success(request, 'Your profile was successfully updated!')
-            return redirect('profile')
+            return redirect('booking:profile')
         else:
             messages.error(request, 'Please correct the error below.')
     else:
         user_form = UserForm(instance=request.user)
-        profile_form = ProfileForm(instance=request.user.profile)
+        profile_form = ProfileForm(instance=profile)
     
     return render(request, 'booking/profile_update.html', {
         'user_form': user_form,

@@ -1,27 +1,15 @@
 {
-  "framework": null,
   "builds": [
     {
       "src": "Assignment1/wsgi.py",
       "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
+      "config": { "maxLambdaSize": "50mb", "runtime": "python3.9" }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "Assignment1/wsgi.py",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, DELETE, PUT"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "Assignment1/wsgi.py"
-    }
-  ]
+    { "src": "/(.*)", "dest": "Assignment1/wsgi.py" }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "Assignment1.vercel_settings"
+  }
 }

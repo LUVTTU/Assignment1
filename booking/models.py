@@ -90,6 +90,23 @@ class Room(models.Model):
         return not overlapping_bookings.exists()
 
 
+class ReservationQuerySet(models.QuerySet):
+    def approved(self):
+        return self.filter(status='APPROVED')
+    
+    def pending(self):
+        return self.filter(status='PENDING')
+
+class ReservationManager(models.Manager):
+    def get_queryset(self):
+        return ReservationQuerySet(self.model, using=self._db)
+    
+    def approved(self):
+        return self.get_queryset().approved()
+    
+    def pending(self):
+        return self.get_queryset().pending()
+
 class Reservation(models.Model):
     STATUS_CHOICES = [
         ('PENDING', 'Pending Approval'),
