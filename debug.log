@@ -8940,3 +8940,5 @@ INFO 2025-10-10 19:40:23,350 basehttp "GET /media/room_images/Sunrise_Room.jpg H
 INFO 2025-10-10 19:40:23,544 basehttp "GET /media/room_images/Tech_Lab.jpg HTTP/1.1" 304 0
 INFO 2025-10-10 19:40:23,743 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
 INFO 2025-10-10 19:40:25,905 basehttp "GET / HTTP/1.1" 200 23194
+INFO 2025-10-10 19:41:34,267 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 19:41:34,897 autoreload Watching for file changes with StatReloader
