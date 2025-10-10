@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 
 import os
 from django.core.wsgi import get_wsgi_application
-from whitenoise import WhiteNoise
 from pathlib import Path
 
 # Use vercel settings in production
@@ -20,10 +19,8 @@ else:
 
 application = get_wsgi_application()
 
-# Add WhiteNoise for static files
-application = WhiteNoise(application, root=Path(__file__).parent.parent / 'staticfiles')
-application.add_files(Path(__file__).parent.parent / 'media', prefix='media/')
-
-
-application = get_wsgi_application()
-app = application
+# Only use WhiteNoise if not on Vercel (Vercel handles static files differently)
+if not os.environ.get('VERCEL') == '1':
+    from whitenoise import WhiteNoise
+    application = WhiteNoise(application, root=Path(__file__).parent.parent / 'staticfiles')
+    application.add_files(Path(__file__).parent.parent / 'media', prefix='media/')
