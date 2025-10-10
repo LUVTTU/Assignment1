@@ -96,45 +96,18 @@ WSGI_APPLICATION = 'Assignment1.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Check if running in Vercel production environment
-if os.getenv('VERCEL'):
-    # Production settings for Vercel
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('PGDATABASE'),
-            'USER': os.getenv('PGUSER'),
-            'PASSWORD': os.getenv('PGPASSWORD'),
-            'HOST': os.getenv('PGHOST'),  # Use the pooled connection for production
-            'PORT': os.getenv('PGPORT'),
-            'OPTIONS': {
-                'sslmode': 'require'
-            }
-        }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDATABASE'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('PGPASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT'),
+        'OPTIONS': {'sslmode': 'require'}
     }
-else:
-    # Local development settings
-    if os.getenv('DB_ENGINE') == 'sqlite':
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': BASE_DIR / 'db.sqlite3',
-            }
-        }
-    else:
-        # Local PostgreSQL settings
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': os.getenv('PGDATABASE'),
-                'USER': os.getenv('PGUSER'),
-                'PASSWORD': os.getenv('PGPASSWORD'),
-                'HOST': os.getenv('PGHOST_UNPOOLED'),  # Using unpooled connection for migrations
-                'PORT': os.getenv('PGPORT'),
-                'OPTIONS': {
-                    'sslmode': 'require'
-                }
-            }
-        }
+}
 
 
 # Password validation
