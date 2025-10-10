@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "Assignment1/wsgi.py",
