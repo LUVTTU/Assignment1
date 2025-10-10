@@ -11,18 +11,17 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'insecure-default-key')
 ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
 # Database configuration for Vercel
-#DATABASES = {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': os.getenv('PGDATABASE'),
-#        'USER': os.getenv('PGUSER'),
-#        'PASSWORD': os.getenv('PGPASSWORD'),
-#        'HOST': os.getenv('PGHOST'),  # Use pooled connection in production
-#        'PORT': os.getenv('PGPORT'),
-#        'OPTIONS': {
-#            'sslmode': 'require'
-#       }
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDATABASE'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('PGPASSWORD'),
+       'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT'),
+        'OPTIONS': {'sslmode': 'require'}
+   }
+}
 
 # Static files configuration for Vercel
 STATIC_URL = '/static/'

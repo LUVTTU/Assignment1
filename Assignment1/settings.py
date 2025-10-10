@@ -97,17 +97,17 @@ WSGI_APPLICATION = 'Assignment1.wsgi.application'
 
 # Check if running in Vercel production environment
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PGDATABASE'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('PGPASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT'),
-        'OPTIONS': {'sslmode': 'require'}
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.getenv('PGDATABASE'),
+#        'USER': os.getenv('PGUSER'),
+#        'PASSWORD': os.getenv('PGPASSWORD'),
+ #       'HOST': os.getenv('PGHOST'),
+#        'PORT': os.getenv('PGPORT'),
+#        'OPTIONS': {'sslmode': 'require'}
+#   }
+#}
 
 
 # Password validation
