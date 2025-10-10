@@ -5,17 +5,16 @@
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "50mb",
-        "runtime": "python3.9"
+        "runtime": "python3.12"
       }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "Assignment1/wsgi.py"
-    }
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/media/(.*)", "dest": "/media/$1" },
+    { "src": "/(.*)", "dest": "Assignment1/wsgi.py" }
   ],
-  "env": {
+    "env": {
     "DJANGO_SETTINGS_MODULE": "Assignment1.vercel_settings",
     "VERCEL": "1"
   }
