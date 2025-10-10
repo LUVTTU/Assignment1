@@ -8924,3 +8924,19 @@ INFO 2025-10-10 19:36:02,546 autoreload Watching for file changes with StatReloa
 INFO 2025-10-10 19:36:10,449 basehttp "GET / HTTP/1.1" 200 20589
 INFO 2025-10-10 19:36:11,309 basehttp "GET /favicon.ico HTTP/1.1" 301 0
 WARNING 2025-10-10 19:36:11,329 basehttp "GET /static/favicon.ico HTTP/1.1" 404 1847
+INFO 2025-10-10 19:40:04,310 autoreload C:\Users\GGPC\Documents\GitHub\Assignment1\booking\views.py changed, reloading.
+INFO 2025-10-10 19:40:04,994 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 19:40:17,319 basehttp "GET /rooms/ HTTP/1.1" 200 38084
+INFO 2025-10-10 19:40:19,971 basehttp "GET /media/room_images/Executive_Boardroom.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:20,195 basehttp "GET /media/room_images/Focus_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:20,394 basehttp "GET /media/room_images/Grand_Ballroom.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:20,589 basehttp "GET /media/room_images/Innovation_Hub.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:20,808 basehttp "GET /media/room_images/Huddle_Space.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:21,017 basehttp "GET /media/room_images/Creative_Studio_kQWuXah.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:22,745 basehttp "GET /media/room_images/Learning_Center.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:22,930 basehttp "GET /media/room_images/Main_Auditorium.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:23,146 basehttp "GET /media/room_images/Sky_Lounge.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:23,350 basehttp "GET /media/room_images/Sunrise_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:23,544 basehttp "GET /media/room_images/Tech_Lab.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:23,743 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 304 0
+INFO 2025-10-10 19:40:25,905 basehttp "GET / HTTP/1.1" 200 23194
