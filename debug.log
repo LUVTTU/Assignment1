@@ -8920,3 +8920,7 @@ INFO 2025-10-10 02:10:10,791 basehttp "GET /media/room_images/Sky_Lounge.jpg HTT
 INFO 2025-10-10 02:10:11,021 basehttp "GET /media/room_images/Sunrise_Room.jpg HTTP/1.1" 200 5385519
 INFO 2025-10-10 02:10:11,221 basehttp "GET /media/room_images/Tech_Lab.jpg HTTP/1.1" 200 2309262
 INFO 2025-10-10 02:10:11,441 basehttp "GET /media/room_images/War_Room.jpg HTTP/1.1" 200 2624064
+INFO 2025-10-10 19:36:02,546 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 19:36:10,449 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 19:36:11,309 basehttp "GET /favicon.ico HTTP/1.1" 301 0
+WARNING 2025-10-10 19:36:11,329 basehttp "GET /static/favicon.ico HTTP/1.1" 404 1847
