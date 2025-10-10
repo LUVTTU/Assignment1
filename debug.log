@@ -32,3 +32,6 @@ INFO 2025-10-10 12:50:06,858 autoreload C:\Users\camer\PycharmProjects\ISCG7420\
 INFO 2025-10-10 12:50:07,221 autoreload Watching for file changes with StatReloader
 INFO 2025-10-10 12:51:36,989 autoreload Watching for file changes with StatReloader
 INFO 2025-10-10 12:51:38,850 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 13:01:27,822 basehttp "GET / HTTP/1.1" 200 20589
+WARNING 2025-10-10 13:01:30,871 log Not Found: /api/categories/
+WARNING 2025-10-10 13:01:30,872 basehttp "GET /api/categories/ HTTP/1.1" 404 23160
