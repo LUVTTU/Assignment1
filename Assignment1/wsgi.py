@@ -24,5 +24,5 @@ application = get_wsgi_application()
 application = WhiteNoise(application, root=Path(__file__).parent.parent / 'staticfiles')
 application.add_files(Path(__file__).parent.parent / 'media', prefix='media/')
 
-# Vercel needs a variable named 'app' for serverless functions
-app = application
+
+application = get_wsgi_application()

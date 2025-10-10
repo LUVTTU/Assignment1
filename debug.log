@@ -60,3 +60,7 @@ INFO 2025-10-10 13:12:02,288 basehttp "GET /admin/auth/user/2/change/ HTTP/1.1" 
 INFO 2025-10-10 13:12:02,306 basehttp "GET /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 200 4215
 INFO 2025-10-10 13:17:36,308 autoreload Watching for file changes with StatReloader
 INFO 2025-10-10 13:17:38,081 basehttp "GET / HTTP/1.1" 200 20589
+INFO 2025-10-10 13:35:12,649 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 13:35:14,340 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:35:23,874 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\wsgi.py changed, reloading.
+INFO 2025-10-10 13:35:24,252 autoreload Watching for file changes with StatReloader
