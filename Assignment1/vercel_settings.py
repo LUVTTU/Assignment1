@@ -1,6 +1,10 @@
 from .settings import *
 import os
 
+
+from dotenv import load_dotenv
+load_dotenv()
+
 # Security settings
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'insecure-default-key')
