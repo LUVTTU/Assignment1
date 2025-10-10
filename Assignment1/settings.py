@@ -103,19 +103,19 @@ WSGI_APPLICATION = 'Assignment1.wsgi.application'
 
 # Uncomment this for PostgreSQL in production
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'NAME': os.getenv('PGNAME'),
-         'USER': os.getenv('PGUSER'),
-         'PASSWORD': os.getenv('PGPASSWORD'),
-         'HOST': os.getenv('PGHOST_UNPOOLED'),
-         'PORT': os.getenv('PGPORT'),
-         'DB': os.getenv('PGDATABASE'),
-         'OPTIONS': {
-             'sslmode': 'require',
-         }
-     }
- }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDATABASE'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('PGPASSWORD'),
+        'HOST': os.getenv('PGHOST_UNPOOLED'),  # Using unpooled connection as required by Neon.tech
+        'PORT': os.getenv('PGPORT'),
+        'OPTIONS': {
+            'sslmode': 'require'
+            # Removed search_path as it's not supported with pooled connections
+        }
+    }
+}
 
 
 # Password validation
