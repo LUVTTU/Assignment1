@@ -64,3 +64,5 @@ INFO 2025-10-10 13:35:12,649 autoreload C:\Users\camer\PycharmProjects\ISCG7420\
 INFO 2025-10-10 13:35:14,340 autoreload Watching for file changes with StatReloader
 INFO 2025-10-10 13:35:23,874 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\wsgi.py changed, reloading.
 INFO 2025-10-10 13:35:24,252 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 13:46:43,682 autoreload C:\Users\camer\PycharmProjects\ISCG7420\Assignment1\Assignment1\settings.py changed, reloading.
+INFO 2025-10-10 13:46:44,043 autoreload Watching for file changes with StatReloader
