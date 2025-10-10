@@ -282,6 +282,8 @@ LOGGING = {
 }
 
 
+
+
 # Custom settings
 MAX_RESERVATION_HOURS = 8  # Maximum duration for a reservation in hours
 MIN_RESERVATION_NOTICE = 1  # Minimum notice in hours before a reservation can be made
