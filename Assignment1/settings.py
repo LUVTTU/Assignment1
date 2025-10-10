@@ -110,6 +110,7 @@ DATABASES = {
          'PASSWORD': os.getenv('PGPASSWORD'),
          'HOST': os.getenv('PGHOST'),
          'PORT': os.getenv('PGPORT'),
+         'DB': os.getenv('PGDATABASE'),
          'OPTIONS': {
              'sslmode': 'require',
          }
